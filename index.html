@@ -1,6 +1,197 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Shape Business</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background: linear-gradient(to right, #d40000, gold);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 48px;
+            margin: 0;
+            font-weight: bold;
+            text-shadow: 2px 2px 5px #000;
+        }
+        nav {
+            background: #222;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        section {
+            padding: 20px;
+        }
+        .blog-post {
+            background: white;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-left: 4px solid #d40000;
+        }
+        .blog-post h2 {
+            margin-top: 0;
+        }
+        .like-comment {
+            margin-top: 10px;
+        }
+        .dark-mode {
+            background: #111;
+            color: #fff;
+        }
+        footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        .ads {
+            background: gold;
+            padding: 10px;
+            margin: 10px 0;
+            text-align: center;
+            font-weight: bold;
+        }
+        .newsletter input {
+            padding: 8px;
+            width: 70%;
+        }
+        .newsletter button {
+            padding: 8px 15px;
+            background: red;
+            color: white;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>E-Shape Business</h1>
+    <p>Earn Money | Business Ideas | Passive Income</p>
+</header>
+
+<nav>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Blog</a>
+    <a href="#">Contact</a>
+    <a href="#" onclick="alert('Login System Coming Soon!')">Login</a>
+    <a href="#" onclick="alert('Signup System Coming Soon!')">Signup</a>
+    <button onclick="toggleDarkMode()" style="float:right; margin-right:10px;">Dark Mode</button>
+</nav>
+
+<section>
+    <div class="ads">Ad / Affiliate Product Banner Area</div>
+
+    <h2>Write Your Blog Below</h2>
+    <form id="blogForm">
+        <input type="text" id="blogTitle" placeholder="Blog Title" required style="width:100%;padding:10px;"><br><br>
+        <textarea id="blogContent" placeholder="Write your blog content here..." required style="width:100%;height:150px;padding:10px;"></textarea><br><br>
+        <button type="submit">Post Blog</button>
+    </form>
+
+    <hr>
+
+    <div id="blogContainer"></div>
+
+    <hr>
+    <div class="newsletter">
+        <h3>Subscribe to Our Newsletter</h3>
+        <input type="email" placeholder="Enter your email">
+        <button>Subscribe</button>
+    </div>
+</section>
+
+<footer>
+    &copy; 2025 E-Shape Business | Designed by You & ChatGPT
+</footer>
+
+<script>
+    function toggleDarkMode() {
+        document.body.classList.toggle("dark-mode");
+    }
+
+    let viewCounts = {};
+
+    document.getElementById('blogForm').addEventListener('submit', function(e){
+        e.preventDefault();
+        let title = document.getElementById('blogTitle').value;
+        let content = document.getElementById('blogContent').value;
+
+        let blogHTML = `
+        <div class="blog-post">
+            <h2>${title}</h2>
+            <p>${content}</p>
+            <div class="like-comment">
+                <button onclick="likePost(this)">Like (<span>0</span>)</button>
+                <input type="text" placeholder="Write a comment..." onkeypress="submitComment(event, this)">
+                <div class="comments"></div>
+                <p>Rating: 
+                    <select>
+                        <option>3 Stars</option>
+                        <option>4 Stars</option>
+                        <option>5 Stars</option>
+                    </select>
+                </p>
+                <p class="views">Views: <span>1</span></p>
+                <p>
+                    Share: 
+                    <a href="#">WhatsApp</a> | 
+                    <a href="#">Facebook</a> | 
+                    <a href="#">Twitter</a>
+                </p>
+            </div>
+        </div>`;
+        
+        document.getElementById('blogContainer').innerHTML += blogHTML;
+        document.getElementById('blogForm').reset();
+    });
+
+    function likePost(btn) {
+        let span = btn.querySelector("span");
+        let count = parseInt(span.innerText);
+        span.innerText = count + 1;
+    }
+
+    function submitComment(e, input){
+        if(e.key === "Enter"){
+            let commentText = input.value;
+            let commentDiv = input.nextElementSibling;
+            if(commentText.trim() !== ""){
+                commentDiv.innerHTML += `<p>${commentText}</p>`;
+                input.value = "";
+            }
+        }
+    }
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>E-Shape Business</title>
