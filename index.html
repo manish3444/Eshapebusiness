@@ -293,3 +293,207 @@
 </body>
 </html>
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>E-Shape Business</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f4f4f4; }
+        header { background: linear-gradient(to right, #b8860b, #ff0000); color: white; padding: 20px; text-align: center; }
+        header h1 { font-size: 48px; text-shadow: 2px 2px 5px black; }
+        nav { background: #333; padding: 10px; text-align: center; }
+        nav a { color: white; margin: 0 15px; text-decoration: none; }
+        nav a:hover { text-decoration: underline; }
+        section { padding: 20px; }
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; }
+        .form-group input, .form-group textarea { width: 100%; padding: 10px; }
+        .profile, .blog { background: white; padding: 20px; margin-bottom: 20px; border-radius: 5px; }
+        .comment-box textarea { width: 100%; height: 60px; }
+        .star { cursor: pointer; font-size: 20px; color: #ccc; }
+        .star.active { color: gold; }
+        .admin-panel { background: #ffe0b3; padding: 15px; border-radius: 5px; margin-top: 20px; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>E-Shape Business</h1>
+    <p>Empowering Ideas, Enabling Income</p>
+</header>
+
+<nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#blog">Blog</a>
+    <a href="#contact">Contact</a>
+    <a href="#login">Login</a>
+    <a href="#signup">Signup</a>
+</nav>
+
+<section id="home">
+    <h2>Welcome to E-Shape Business</h2>
+    <p>Grow your knowledge and income with our powerful blog platform.</p>
+</section>
+
+<section id="about">
+    <h2>About Us</h2>
+    <p>E-Shape Business is dedicated to helping you grow financially through online ideas and resources.</p>
+</section>
+
+<section id="services">
+    <h2>Services</h2>
+    <ul>
+        <li>Online Business Ideas</li>
+        <li>Marketing Strategies</li>
+        <li>Passive Income Tips</li>
+    </ul>
+</section>
+
+<section id="blog">
+    <h2>Our Blog</h2>
+    <div id="blogPosts"></div>
+
+    <div class="admin-panel">
+        <h3>Add New Blog (Admin Only)</h3>
+        <div class="form-group">
+            <label>Title:</label>
+            <input type="text" id="blogTitle">
+        </div>
+        <div class="form-group">
+            <label>Content:</label>
+            <textarea id="blogContent"></textarea>
+        </div>
+        <button onclick="addBlog()">Post Blog</button>
+    </div>
+</section>
+
+<section id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: contact@eshapebusiness.com</p>
+</section>
+
+<section id="login">
+    <h2>Login</h2>
+    <div class="form-group">
+        <label>Username:</label>
+        <input type="text" id="loginUser">
+    </div>
+    <div class="form-group">
+        <label>Password:</label>
+        <input type="password" id="loginPass">
+    </div>
+    <button onclick="loginUser()">Login</button>
+</section>
+
+<section id="signup">
+    <h2>Signup</h2>
+    <div class="form-group">
+        <label>Username:</label>
+        <input type="text" id="signupUser">
+    </div>
+    <div class="form-group">
+        <label>Password:</label>
+        <input type="password" id="signupPass">
+    </div>
+    <button onclick="signupUser()">Signup</button>
+</section>
+
+<section id="profile" style="display:none;">
+    <h2>User Profile</h2>
+    <div class="profile">
+        <p><strong>Username:</strong> <span id="profileUser"></span></p>
+    </div>
+</section>
+
+<script>
+    let blogs = [];
+    let currentUser = '';
+
+    function addBlog() {
+        const title = document.getElementById('blogTitle').value;
+        const content = document.getElementById('blogContent').value;
+        if (title && content) {
+            const blog = { title, content, likes: 0, comments: [], rating: 0 };
+            blogs.push(blog);
+            displayBlogs();
+            document.getElementById('blogTitle').value = '';
+            document.getElementById('blogContent').value = '';
+        }
+    }
+
+    function displayBlogs() {
+        const container = document.getElementById('blogPosts');
+        container.innerHTML = '';
+        blogs.forEach((blog, index) => {
+            container.innerHTML += `
+                <div class="blog">
+                    <h3>${blog.title}</h3>
+                    <p>${blog.content}</p>
+                    <button onclick="likeBlog(${index})">Like (${blog.likes})</button>
+                    <div class="comment-box">
+                        <textarea id="commentInput${index}" placeholder="Comment..."></textarea>
+                        <button onclick="addComment(${index})">Post Comment</button>
+                        <ul id="comments${index}">
+                            ${blog.comments.map(c => `<li>${c}</li>`).join('')}
+                        </ul>
+                    </div>
+                    <div>
+                        Rating: <span id="rating${index}">${blog.rating}</span>
+                        <span class="star" onclick="rateBlog(${index},1)">★</span>
+                        <span class="star" onclick="rateBlog(${index},2)">★</span>
+                        <span class="star" onclick="rateBlog(${index},3)">★</span>
+                        <span class="star" onclick="rateBlog(${index},4)">★</span>
+                        <span class="star" onclick="rateBlog(${index},5)">★</span>
+                    </div>
+                </div>`;
+        });
+    }
+
+    function likeBlog(index) {
+        blogs[index].likes++;
+        displayBlogs();
+    }
+
+    function addComment(index) {
+        const comment = document.getElementById(`commentInput${index}`).value;
+        if (comment) {
+            blogs[index].comments.push(comment);
+            displayBlogs();
+        }
+    }
+
+    function rateBlog(index, stars) {
+        blogs[index].rating = stars;
+        displayBlogs();
+    }
+
+    function signupUser() {
+        const user = document.getElementById('signupUser').value;
+        const pass = document.getElementById('signupPass').value;
+        alert("Signup successful!");
+        currentUser = user;
+        showProfile();
+    }
+
+    function loginUser() {
+        const user = document.getElementById('loginUser').value;
+        const pass = document.getElementById('loginPass').value;
+        alert("Login successful!");
+        currentUser = user;
+        showProfile();
+    }
+
+    function showProfile() {
+        document.getElementById('profileUser').innerText = currentUser;
+        document.getElementById('profile').style.display = 'block';
+    }
+</script>
+
+</body>
+</html>
+
+
