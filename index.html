@@ -354,6 +354,164 @@
   }
 </script>
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>E-Shape Business</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Navbar Styling */
+    .navbar {
+      background-color: #111;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+    }
+
+    .navbar h1 {
+      color: #fff;
+      margin: 0;
+      font-size: 24px;
+    }
+
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      padding: 0;
+      margin: 0;
+    }
+
+    .navbar ul li {
+      margin: 0 10px;
+    }
+
+    .navbar ul li a {
+      color: white !important;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .navbar ul li a:hover {
+      color: #FFD700;
+    }
+
+    /* Dark Mode Button */
+    .dark-toggle {
+      background: #fff;
+      color: #111;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+      font-weight: bold;
+      border-radius: 5px;
+    }
+
+    /* Blog Area */
+    .container {
+      padding: 20px;
+    }
+
+    .blog-form {
+      margin-bottom: 30px;
+    }
+
+    input[type="text"],
+    textarea,
+    input[type="email"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+    }
+
+    .post-btn, .subscribe-btn {
+      background-color: red;
+      color: white;
+      padding: 10px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .footer {
+      background-color: #111;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .navbar ul {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .navbar ul li {
+        margin: 5px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <h1>E-Shape Business</h1>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Blog</a></li>
+      <li><a href="#">Contact</a></li>
+      <li><a href="#">Login</a></li>
+      <li><a href="#">Signup</a></li>
+    </ul>
+    <button class="dark-toggle" onclick="toggleDarkMode()">Dark Mode</button>
+  </div>
+
+  <!-- Blog Form Area -->
+  <div class="container">
+    <h2>Write Your Blog Below</h2>
+    <div class="blog-form">
+      <input type="text" placeholder="Blog Title" />
+      <textarea rows="5" placeholder="Write your blog content here..."></textarea>
+      <button class="post-btn">Post Blog</button>
+    </div>
+
+    <!-- Newsletter -->
+    <h3>Subscribe to Our Newsletter</h3>
+    <input type="email" placeholder="Enter your email" />
+    <button class="subscribe-btn">Subscribe</button>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <p>© 2025 E-Shape Business | Designed by You & ChatGPT</p>
+  </div>
+
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark");
+      if(document.body.classList.contains("dark")) {
+        document.body.style.backgroundColor = "#111";
+        document.body.style.color = "#fff";
+      } else {
+        document.body.style.backgroundColor = "#fff";
+        document.body.style.color = "#000";
+      }
+    }
+  </script>
+</body>
+</html>
 
 
 
