@@ -282,6 +282,77 @@
 </body>
 </html>
 
+<!-- BLOG SECTION -->
+<section id="blogs" style="padding:40px; background:#f8f8f8;">
+  <h2 style="text-align:center;">Latest Blog Posts</h2>
+  
+  <!-- Blog Card 1 -->
+  <div style="background:#fff; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,0.2); padding:20px; margin:20px auto; max-width:800px;">
+    <h3>Top 5 Business Ideas to Earn Online</h3>
+    <p><strong>By Admin</strong> | <span id="blog1views">Views: 0</span></p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. यह ब्लॉग आपको ऑनलाइन पैसे कमाने के नए तरीकों से परिचित कराएगा...</p>
+    
+    <!-- Like Button -->
+    <button onclick="likeBlog('like1')" style="background:#8B0000; color:white; border:none; padding:8px 15px; border-radius:5px;">Like ❤️</button>
+    <span id="like1">0 Likes</span>
+
+    <!-- Star Rating -->
+    <br><br>
+    <label>Rate this Blog:</label>
+    <select onchange="rateBlog(this.value, 'rating1')">
+      <option value="">Select Rating</option>
+      <option value="1">★☆☆☆☆</option>
+      <option value="2">★★☆☆☆</option>
+      <option value="3">★★★☆☆</option>
+      <option value="4">★★★★☆</option>
+      <option value="5">★★★★★</option>
+    </select>
+    <span id="rating1">Rating: 0</span>
+
+    <!-- Comment Box -->
+    <br><br>
+    <label>Leave a Comment:</label><br>
+    <textarea id="commentBox1" rows="3" cols="60" placeholder="Write your comment here..."></textarea><br>
+    <button onclick="addComment('commentBox1','commentSection1')" style="margin-top:5px; padding:5px 15px;">Post Comment</button>
+    <div id="commentSection1" style="margin-top:10px;"></div>
+  </div>
+
+</section>
+
+<script>
+  // Like Count
+  let likes = 0;
+  function likeBlog(id) {
+    likes++;
+    document.getElementById(id).innerText = likes + " Likes";
+  }
+
+  // Rating Count
+  function rateBlog(value, id) {
+    document.getElementById(id).innerText = "Rating: " + value + " ★";
+  }
+
+  // Add Comment
+  function addComment(inputId, outputId) {
+    var comment = document.getElementById(inputId).value;
+    if(comment.trim() != "") {
+      var div = document.createElement("div");
+      div.style.marginTop = "5px";
+      div.style.padding = "10px";
+      div.style.background = "#eee";
+      div.innerText = comment;
+      document.getElementById(outputId).appendChild(div);
+      document.getElementById(inputId).value = "";
+    }
+  }
+
+  // View Counter (Fake demo)
+  window.onload = function() {
+    var views = parseInt(localStorage.getItem("blog1views") || 0) + 1;
+    localStorage.setItem("blog1views", views);
+    document.getElementById("blog1views").innerText = "Views: " + views;
+  }
+</script>
 
 
 
