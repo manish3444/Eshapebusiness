@@ -5,35 +5,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E-Shape Business</title>
     <style>
-        body { margin: 0; font-family: Arial, sans-serif; background-color: #f4f4f4; }
-        header { background-color: #b30000; color: white; padding: 20px; text-align: center; }
-        header h1 { margin: 0; font-size: 36px; }
-        nav { background-color: #333; display: flex; justify-content: center; }
-        nav a { color: white; padding: 14px 20px; text-decoration: none; display: inline-block; }
-        nav a:hover { background-color: #575757; }
-
-        .hero { background-color: #ffd700; padding: 40px; text-align: center; }
-        .hero h2 { font-size: 32px; color: #b30000; }
-        .hero p { font-size: 18px; }
-
-        section { padding: 40px 20px; background-color: white; margin: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-
-        .form-group { margin-bottom: 15px; }
-        label { display: block; margin-bottom: 5px; }
-        input, textarea { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; }
-
-        .btn { background-color: #b30000; color: white; border: none; padding: 10px 20px; cursor: pointer; border-radius: 5px; }
-        .btn:hover { background-color: #990000; }
-
-        footer { background-color: #333; color: white; text-align: center; padding: 20px; margin-top: 30px; }
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+        header {
+            background: linear-gradient(to right, gold, red);
+            padding: 30px;
+            text-align: center;
+            color: white;
+            text-shadow: 2px 2px 4px #000;
+        }
+        header h1 {
+            font-size: 48px;
+            margin: 0;
+            font-weight: bold;
+            transform: perspective(500px) rotateX(10deg);
+        }
+        nav {
+            background-color: #333;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        nav a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            display: inline-block;
+        }
+        nav a:hover {
+            background-color: #575757;
+        }
+        .hero {
+            background-color: #ffeaa7;
+            padding: 40px;
+            text-align: center;
+        }
+        .hero h2 {
+            font-size: 32px;
+            color: #b30000;
+        }
+        .hero p {
+            font-size: 18px;
+            color: #333;
+        }
     </style>
 </head>
 <body>
-
     <header>
-        <h1>E-Shape Business</h1>
+        <h1>E-SHAPE BUSINESS</h1>
+        <p style="font-size: 20px;">Your Gateway to Business Growth</p>
     </header>
-
     <nav>
         <a href="#home">Home</a>
         <a href="#blog">Blog</a>
@@ -41,94 +65,7 @@
         <a href="#login">Login</a>
         <a href="#signup">Signup</a>
     </nav>
-
-    <div class="hero" id="home">
+    <section class="hero" id="home">
         <h2>Welcome to E-Shape Business</h2>
-        <p>Grow your business with smart strategies and digital power.</p>
-    </div>
-
-    <section id="about">
-        <h2>About Our Business</h2>
-        <p>E-Shape Business एक ऐसा प्लेटफॉर्म है जहाँ हम आपको ऑनलाइन और ऑफलाइन बिजनेस से जुड़ी जानकारी, टिप्स और आइडियाज देते हैं। हमारा उद्देश्य लोगों को आत्मनिर्भर बनाना और उन्हें डिजिटल युग में सफलता की ओर ले जाना है।</p>
+        <p>Learn, Grow & Succeed in Your Business Journey</p>
     </section>
-
-    <section id="services">
-        <h2>Our Services</h2>
-        <ul>
-            <li>Online Business Setup Guidance</li>
-            <li>Blogging & Content Creation Ideas</li>
-            <li>Marketing & Growth Tips</li>
-            <li>Freelancing Earning Guides</li>
-        </ul>
-    </section>
-
-    <section id="blog">
-        <h2>Latest Blog Posts</h2>
-        <h3>5 तरीके ऑनलाइन पैसे कमाने के</h3>
-        <p>आज के डिजिटल युग में पैसे कमाना आसान हो गया है। जानिए 5 बेस्ट तरीके जिससे आप घर बैठे पैसा कमा सकते हैं।</p>
-    </section>
-
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <p>Phone: +91-9598899653</p>
-        <p>Email: info@tiwarimanish5372@gmail.com</p>
-        <p>Address: Lucknow, India</p>
-
-        <h3>Contact Form</h3>
-        <form>
-            <div class="form-group">
-                <label>Your Name:</label>
-                <input type="text" placeholder="Enter your name">
-            </div>
-            <div class="form-group">
-                <label>Email:</label>
-                <input type="email" placeholder="Enter your email">
-            </div>
-            <div class="form-group">
-                <label>Message:</label>
-                <textarea rows="4" placeholder="Write your message here"></textarea>
-            </div>
-            <button class="btn">Send Message</button>
-        </form>
-    </section>
-
-    <section id="login">
-        <h2>Login</h2>
-        <form>
-            <div class="form-group">
-                <label>Email:</label>
-                <input type="email" placeholder="Enter your email">
-            </div>
-            <div class="form-group">
-                <label>Password:</label>
-                <input type="password" placeholder="Enter your password">
-            </div>
-            <button class="btn">Login</button>
-        </form>
-    </section>
-
-    <section id="signup">
-        <h2>Signup</h2>
-        <form>
-            <div class="form-group">
-                <label>Name:</label>
-                <input type="text" placeholder="Enter your name">
-            </div>
-            <div class="form-group">
-                <label>Email:</label>
-                <input type="email" placeholder="Enter your email">
-            </div>
-            <div class="form-group">
-                <label>Password:</label>
-                <input type="password" placeholder="Create a password">
-            </div>
-            <button class="btn">Signup</button>
-        </form>
-    </section>
-
-    <footer>
-        &copy; 2025 E-Shape Business | All Rights Reserved.
-    </footer>
-
-</body>
-</html>
