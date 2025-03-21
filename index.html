@@ -1,71 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-Shape Business</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-        }
-        header {
-            background: linear-gradient(to right, gold, red);
-            padding: 30px;
-            text-align: center;
-            color: white;
-            text-shadow: 2px 2px 4px #000;
-        }
-        header h1 {
-            font-size: 48px;
-            margin: 0;
-            font-weight: bold;
-            transform: perspective(500px) rotateX(10deg);
-        }
-        nav {
-            background-color: #333;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        nav a {
-            color: white;
-            padding: 14px 20px;
-            text-decoration: none;
-            display: inline-block;
-        }
-        nav a:hover {
-            background-color: #575757;
-        }
-        .hero {
-            background-color: #ffeaa7;
-            padding: 40px;
-            text-align: center;
-        }
-        .hero h2 {
-            font-size: 32px;
-            color: #b30000;
-        }
-        .hero p {
-            font-size: 18px;
-            color: #333;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>E-Shape Business</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+    }
+    header {
+      background: linear-gradient(135deg, #b30000, gold);
+      color: white;
+      padding: 30px 10px;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 60px;
+      margin: 0;
+      text-shadow: 2px 2px 5px black;
+    }
+    header h2 {
+      font-size: 24px;
+      margin-top: 5px;
+      font-weight: normal;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #333;
+    }
+    nav a {
+      padding: 14px 20px;
+      display: inline-block;
+      color: white;
+      text-decoration: none;
+    }
+    nav a:hover {
+      background-color: #555;
+    }
+    section {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+      background-color: white;
+      margin-top: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      margin-top: 0;
+    }
+    .form-box {
+      margin-top: 20px;
+    }
+    input, textarea {
+      padding: 10px;
+      margin: 8px 0;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    button {
+      background-color: #b30000;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #880000;
+    }
+    .profile {
+      display: none;
+    }
+    .comment-box, .comment-list, .rating {
+      margin-top: 20px;
+    }
+    .star {
+      font-size: 24px;
+      cursor: pointer;
+      color: gray;
+    }
+    .star.active {
+      color: gold;
+    }
+    footer {
+      text-align: center;
+      background-color: #333;
+      color: white;
+      padding: 20px;
+      margin-top: 30px;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>E-SHAPE BUSINESS</h1>
-        <p style="font-size: 20px;">Your Gateway to Business Growth</p>
-    </header>
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#blog">Blog</a>
-        <a href="#contact">Contact</a>
-        <a href="#login">Login</a>
-        <a href="#signup">Signup</a>
-    </nav>
-    <section class="hero" id="home">
-        <h2>Welcome to E-Shape Business</h2>
-        <p>Learn, Grow & Succeed in Your Business Journey</p>
-    </section>
+
+  <header>
+    <h1>E</h1>
+    <h2>E-Shape Business</h2>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#blog">Blog</a>
+    <a href="#contact">Contact</a>
+    <a href="#login">Login</a>
+    <a href="#signup">Signup</a>
+    <a href="#profile" id="profileLink" style="display:none;">My Profile</a>
+  </nav>
+
+  <section id="about">
+    <h2>About Us</h2>
+    <p>E-Shape Business एक ऐसा प्लेटफ़ॉर्म है जहाँ आप सीखते हैं बिजनेस, ब्लॉगिंग, डिजिटल ग्रोथ और फ्रीलांसिंग के स्मार्ट तरीके।</p>
+  </section>
+
+  <section id="services">
+    <h2>Our Services</h2>
+    <ul>
+      <li>Online Business Ideas</li>
+      <li>Digital Marketing Strategy</li>
+      <li>Content Creation & Blogging</li>
+      <li>Freelancing Support</li>
+    </ul>
+  </section>
+
+  <section id="blog">
+    <h2>Latest Blog</h2>
+    <article>
+      <h3>5 तरीके ऑनलाइन पैसे कमाने के</h3>
+      <p>ब्लॉगिंग, एफिलिएट मार्केटिंग, यूट्यूब चैनल, फ्रीलांसिंग, ऑनलाइन कोर्स — जानिए कैसे आप घर बैठे कमाई कर सकते हैं।</p>
+      <div style="margin-top:10px;">
+        <button onclick="likePost()">Like (<span id="likeCount">0</span>)</button>
+      </div>
+
+      <div class="comment-box">
+        <h4>Leave a Comment:</h4>
+        <textarea id="commentInput" placeholder="Write your comment..."></textarea>
+        <button onclick="addComment()">Post Comment</button>
+        <ul id="commentList" style="list-style: none; padding-left: 0;"></ul>
+      </div>
+
+      <div class="rating">
+        <h4>Rate this Blog:</h4>
+        <span class="star" onclick="rateBlog(1)">★</span>
+        <span class="star" onclick="rateBlog(2)">★</span>
+        <span class="star" onclick="rateBlog(3)">★</span>
+        <span class="star" onclick="rateBlog(4)">★</span>
+        <span class="star" onclick="rateBlog(5)">★</span>
+        <p id="ratingResult"></p>
+      </div>
+    </article>
+  </section>
+
+   
