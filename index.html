@@ -1,198 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>E-Shape Business</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-    }
-
-    /* Navbar Styling */
-    .navbar {
-      background-color: #111;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 20px;
-    }
-
-    .navbar h1 {
-      color: #fff;
-      margin: 0;
-      font-size: 24px;
-    }
-
-    .navbar ul {
-      list-style: none;
-      display: flex;
-      flex-wrap: wrap;
-      padding: 0;
-      margin: 0;
-    }
-
-    .navbar ul li {
-      margin: 0 10px;
-    }
-
-    .navbar ul li a {
-      color: white !important;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .navbar ul li a:hover {
-      color: #FFD700;
-    }
-
-    /* Dark Mode Button */
-    .dark-toggle {
-      background: #fff;
-      color: #111;
-      border: none;
-      padding: 5px 10px;
-      cursor: pointer;
-      font-weight: bold;
-      border-radius: 5px;
-    }
-
-    /* Blog Area */
-    .container {
-      padding: 20px;
-    }
-
-    .blog-form {
-      margin-bottom: 30px;
-    }
-
-    input[type="text"],
-    textarea,
-    input[type="email"] {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 10px;
-      border: 1px solid #ccc;
-    }
-
-    .post-btn, .subscribe-btn {
-      background-color: red;
-      color: white;
-      padding: 10px;
-      border: none;
-      cursor: pointer;
-    }
-
-    .footer {
-      background-color: #111;
-      color: white;
-      text-align: center;
-      padding: 20px;
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      .navbar ul {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .navbar ul li {
-        margin: 5px 0;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Shape Business | Earn Money Ideas</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+        header {
+            background: linear-gradient(to right, #a00000, #ffcc00);
+            padding: 20px;
+            color: white;
+            text-align: center;
+        }
+        nav {
+            background-color: #222;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+            width: 220px;
+            position: fixed;
+            height: 100%;
+        }
+        nav a {
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+            display: block;
+        }
+        nav a:hover {
+            background-color: #444;
+        }
+        main {
+            margin-left: 240px;
+            padding: 20px;
+        }
+        .blog-form, .newsletter, .ads, .promotion, .blog-post, .login-signup {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #222;
+            color: white;
+        }
+        .share-buttons a {
+            margin-right: 10px;
+            text-decoration: none;
+            color: white;
+            padding: 5px 10px;
+            background-color: #007bff;
+            border-radius: 4px;
+        }
+    </style>
 </head>
 <body>
+    <header>
+        <h1>E-Shape Business</h1>
+        <p>Earn Money | Business Ideas | Passive Income</p>
+    </header>
 
-  <!-- Navbar -->
-  <div class="navbar">
-    <h1>E-Shape Business</h1>
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Services</a></li>
-      <li><a href="#">Blog</a></li>
-      <li><a href="#">Contact</a></li>
-      <li><a href="#">Login</a></li>
-      <li><a href="#">Signup</a></li>
-    </ul>
-    <button class="dark-toggle" onclick="toggleDarkMode()">Dark Mode</button>
-  </div>
+    <nav>
+        <a href="#">Dashboard</a>
+        <a href="#">Upload Blog</a>
+        <a href="#">Latest Posts</a>
+        <a href="#">Newsletter</a>
+        <a href="#">Promotions</a>
+        <a href="#">Affiliate Ads</a>
+        <a href="#">Login / Signup</a>
+        <a href="#">Dark Mode</a>
+    </nav>
 
-  <!-- Blog Form Area -->
-  <div class="container">
-    <h2>Write Your Blog Below</h2>
-    <div class="blog-form">
-      <input type="text" placeholder="Blog Title" />
-      <textarea rows="5" placeholder="Write your blog content here..."></textarea>
-      <button class="post-btn">Post Blog</button>
-    </div>
+    <main>
+        <section class="blog-form">
+            <h2>Write Your Blog</h2>
+            <input type="text" placeholder="Blog Title" style="width:100%; padding:10px;"><br><br>
+            <textarea placeholder="Blog content here..." rows="5" style="width:100%; padding:10px;"></textarea><br><br>
+            <button>Post Blog</button>
+        </section>
 
-    <!-- Newsletter -->
-    <h3>Subscribe to Our Newsletter</h3>
-    <input type="email" placeholder="Enter your email" />
-    <button class="subscribe-btn">Subscribe</button>
-  </div>
+        <section class="newsletter">
+            <h2>Subscribe to Newsletter</h2>
+            <input type="email" placeholder="Enter your email" style="width:100%; padding:10px;"><br><br>
+            <button>Subscribe</button>
+        </section>
 
-  <!-- Footer -->
-  <div class="footer">
-    <p>© 2025 E-Shape Business | Designed by You & ChatGPT</p>
-  </div>
+        <section class="ads">
+            <h2>Affiliate Ad Section</h2>
+            <p>[Place your affiliate banner here]</p>
+        </section>
 
-  <script>
-    function toggleDarkMode() {
-      document.body.classList.toggle("dark");
-      if(document.body.classList.contains("dark")) {
-        document.body.style.backgroundColor = "#111";
-        document.body.style.color = "#fff";
-      } else {
-        document.body.style.backgroundColor = "#fff";
-        document.body.style.color = "#000";
-      }
-    }
-  </script>
+        <section class="promotion">
+            <h2>Buy Now / Promotion</h2>
+            <p>Promote your course, eBook or product here.</p>
+            <button>Buy Now</button>
+        </section>
+
+        <section class="blog-post">
+            <h2>Sample Blog Post</h2>
+            <p>This is an example blog post. Visitors will see the content you upload here.</p>
+            <p><strong>Views:</strong> 123</p>
+            <div class="share-buttons">
+                <a href="#">WhatsApp</a>
+                <a href="#">Facebook</a>
+                <a href="#">Telegram</a>
+            </div>
+        </section>
+
+        <section class="login-signup">
+            <h2>Login / Signup</h2>
+            <input type="text" placeholder="Username" style="width:100%; padding:10px;"><br><br>
+            <input type="password" placeholder="Password" style="width:100%; padding:10px;"><br><br>
+            <button>Login</button> <button>Signup</button>
+        </section>
+    </main>
+
+    <footer class="footer">
+        © 2025 E-Shape Business | Designed by You & ChatGPT
+    </footer>
 </body>
 </html>
-
-
-
-</section>
-
-<script>
-  // Like Count
-  let likes = 0;
-  function likeBlog(id) {
-    likes++;
-    document.getElementById(id).innerText = likes + " Likes";
-  }
-
-  // Rating Count
-  function rateBlog(value, id) {
-    document.getElementById(id).innerText = "Rating: " + value + " ★";
-  }
-
-  // Add Comment
-  function addComment(inputId, outputId) {
-    var comment = document.getElementById(inputId).value;
-    if(comment.trim() != "") {
-      var div = document.createElement("div");
-      div.style.marginTop = "5px";
-      div.style.padding = "10px";
-      div.style.background = "#eee";
-      div.innerText = comment;
-      document.getElementById(outputId).appendChild(div);
-      document.getElementById(inputId).value = "";
-    }
-  }
-
-  // View Counter (Fake demo)
-  window.onload = function() {
-    var views = parseInt(localStorage.getItem("blog1views") || 0) + 1;
-    localStorage.setItem("blog1views", views);
-    document.getElementById("blog1views").innerText = "Views: " + views;
-  }
-</script>
-
