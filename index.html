@@ -1,129 +1,201 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-Shape Business | Earn Money Ideas</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-        }
-        header {
-            background: linear-gradient(to right, #a00000, #ffcc00);
-            padding: 20px;
-            color: white;
-            text-align: center;
-        }
-        nav {
-            background-color: #222;
-            color: white;
-            display: flex;
-            flex-direction: column;
-            padding: 10px;
-            width: 220px;
-            position: fixed;
-            height: 100%;
-        }
-        nav a {
-            color: white;
-            padding: 10px;
-            text-decoration: none;
-            display: block;
-        }
-        nav a:hover {
-            background-color: #444;
-        }
-        main {
-            margin-left: 240px;
-            padding: 20px;
-        }
-        .blog-form, .newsletter, .ads, .promotion, .blog-post, .login-signup {
-            background: white;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        .footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #222;
-            color: white;
-        }
-        .share-buttons a {
-            margin-right: 10px;
-            text-decoration: none;
-            color: white;
-            padding: 5px 10px;
-            background-color: #007bff;
-            border-radius: 4px;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="E-Shape Business - Explore Money Making Ideas, Business Tools, and Growth Strategies.">
+  <meta name="keywords" content="E-Shape Business, Money Making, Business Ideas, Online Earning, Blogs, Affiliate Marketing">
+  <meta name="author" content="E-Shape Business">
+  <title>E-Shape Business</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    body { margin: 0; font-family: 'Segoe UI', sans-serif; background: #f4f4f4; color: #333; }
+    header { background: linear-gradient(to right, #c0392b, #f39c12); padding: 20px; text-align: center; color: #fff; }
+    header h1 { font-size: 2.8em; font-family: 'Georgia', serif; text-shadow: 2px 2px #000; letter-spacing: 1px; }
+    nav { background: #222; display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; color: #fff; }
+    nav .nav-links a { color: #fff; text-decoration: none; margin: 0 10px; font-weight: bold; }
+    nav .dropdown { position: relative; display: inline-block; }
+    nav .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #444;
+      min-width: 200px;
+      z-index: 1;
+    }
+    nav .dropdown-content a {
+      color: #fff;
+      padding: 10px 15px;
+      display: block;
+      text-decoration: none;
+      border-bottom: 1px solid #666;
+    }
+    nav .dropdown:hover .dropdown-content { display: block; }
+    .sidebar {
+      width: 230px;
+      background: #333;
+      position: fixed;
+      top: 100px;
+      left: 0;
+      bottom: 0;
+      padding: 20px;
+      color: #fff;
+      overflow-y: auto;
+    }
+    .sidebar h3 { color: gold; margin-bottom: 10px; }
+    .sidebar a {
+      color: #fff;
+      text-decoration: none;
+      display: block;
+      margin: 10px 0;
+      padding: 8px;
+      border-radius: 4px;
+      background: #444;
+    }
+    .sidebar a:hover { background: #555; }
+    .main-content {
+      margin-left: 250px;
+      padding: 20px;
+    }
+    .card {
+      background: #fff;
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .footer {
+      background: #222;
+      color: #fff;
+      text-align: center;
+      padding: 15px;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+    }
+    .dark-mode { background: #121212; color: #fff; }
+    .dark-mode .card { background: #1e1e1e; color: #fff; }
+    .search-bar input {
+      width: 100%;
+      padding: 10px;
+      margin: 15px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .btn {
+      padding: 10px 15px;
+      background: #e74c3c;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      margin: 5px 0;
+    }
+    .btn:hover { background: #c0392b; }
+    input[type="email"], input[type="text"], textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>E-Shape Business</h1>
-        <p>Earn Money | Business Ideas | Passive Income</p>
-    </header>
+  <header>
+    <h1>E-Shape Business</h1>
+    <p>Your Gateway to Success & Online Earnings</p>
+  </header>
 
-    <nav>
-        <a href="#">Dashboard</a>
+  <nav>
+    <div class="nav-links">
+      <a href="#">Home</a>
+      <a href="#">Blog</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </div>
+    <div class="dropdown">
+      <span><i class="fas fa-ellipsis-v fa-lg"></i></span>
+      <div class="dropdown-content">
         <a href="#">Upload Blog</a>
-        <a href="#">Latest Posts</a>
-        <a href="#">Newsletter</a>
-        <a href="#">Promotions</a>
-        <a href="#">Affiliate Ads</a>
         <a href="#">Login / Signup</a>
-        <a href="#">Dark Mode</a>
-    </nav>
+        <a href="#">User Profile</a>
+        <a href="#">Newsletter</a>
+        <a href="#">Affiliate Ads</a>
+        <a href="#">Promotions</a>
+        <a href="#">Refer & Earn</a>
+        <a href="#">Downloads</a>
+        <a href="#" onclick="toggleDarkMode()">Toggle Dark Mode</a>
+        <a href="#">Language Translate</a>
+      </div>
+    </div>
+  </nav>
 
-    <main>
-        <section class="blog-form">
-            <h2>Write Your Blog</h2>
-            <input type="text" placeholder="Blog Title" style="width:100%; padding:10px;"><br><br>
-            <textarea placeholder="Blog content here..." rows="5" style="width:100%; padding:10px;"></textarea><br><br>
-            <button>Post Blog</button>
-        </section>
+  <div class="sidebar">
+    <h3>Quick Menu</h3>
+    <a href="#">Create Blog</a>
+    <a href="#">My Dashboard</a>
+    <a href="#">Blog Categories</a>
+    <a href="#">Affiliate Banners</a>
+    <a href="#">Refer & Earn</a>
+    <a href="#">Subscribe Newsletter</a>
+    <a href="#">Promo Countdown</a>
+    <a href="#">Downloads</a>
+  </div>
 
-        <section class="newsletter">
-            <h2>Subscribe to Newsletter</h2>
-            <input type="email" placeholder="Enter your email" style="width:100%; padding:10px;"><br><br>
-            <button>Subscribe</button>
-        </section>
+  <div class="main-content">
+    <div class="search-bar">
+      <input type="text" placeholder="Search blogs, tools, tips..." />
+    </div>
 
-        <section class="ads">
-            <h2>Affiliate Ad Section</h2>
-            <p>[Place your affiliate banner here]</p>
-        </section>
+    <div class="card">
+      <h2>Welcome to E-Shape Business</h2>
+      <p>Discover blogs, startup tips, business tools, money making ideas and more...</p>
+    </div>
 
-        <section class="promotion">
-            <h2>Buy Now / Promotion</h2>
-            <p>Promote your course, eBook or product here.</p>
-            <button>Buy Now</button>
-        </section>
+    <div class="card">
+      <h3>Latest Blog Post</h3>
+      <p>This is a sample blog post. You can dynamically add more blog content in future.</p>
+      <p><strong>Views:</strong> 102 | <strong>Rating:</strong> ★★★★☆</p>
+      <button class="btn">Like</button>
+      <button class="btn">Share</button>
+    </div>
 
-        <section class="blog-post">
-            <h2>Sample Blog Post</h2>
-            <p>This is an example blog post. Visitors will see the content you upload here.</p>
-            <p><strong>Views:</strong> 123</p>
-            <div class="share-buttons">
-                <a href="#">WhatsApp</a>
-                <a href="#">Facebook</a>
-                <a href="#">Telegram</a>
-            </div>
-        </section>
+    <div class="card">
+      <h3>Newsletter Subscription</h3>
+      <input type="email" placeholder="Enter your email..." />
+      <button class="btn">Subscribe</button>
+    </div>
 
-        <section class="login-signup">
-            <h2>Login / Signup</h2>
-            <input type="text" placeholder="Username" style="width:100%; padding:10px;"><br><br>
-            <input type="password" placeholder="Password" style="width:100%; padding:10px;"><br><br>
-            <button>Login</button> <button>Signup</button>
-        </section>
-    </main>
+    <div class="card">
+      <h3>Affiliate Ads Promotion</h3>
+      <p>Promote products and earn commission using our affiliate banners.</p>
+      <button class="btn">View Ads</button>
+    </div>
 
-    <footer class="footer">
-        © 2025 E-Shape Business | Designed by You & ChatGPT
-    </footer>
+    <div class="card">
+      <h3>Upload Your Blog</h3>
+      <input type="text" placeholder="Blog Title" />
+      <textarea placeholder="Write your blog here..."></textarea>
+      <button class="btn">Submit Blog</button>
+    </div>
+
+    <div class="card">
+      <h3>Contact Us</h3>
+      <input type="text" placeholder="Your Name" />
+      <input type="email" placeholder="Your Email" />
+      <textarea placeholder="Your Message..."></textarea>
+      <button class="btn">Send</button>
+    </div>
+  </div>
+
+  <div class="footer">
+    © 2025 E-Shape Business | All Rights Reserved.
+  </div>
+
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+    }
+  </script>
 </body>
 </html>
