@@ -2,199 +2,250 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="E-Shape Business - Explore Money Making Ideas, Business Tools, and Growth Strategies.">
-  <meta name="keywords" content="E-Shape Business, Money Making, Business Ideas, Online Earning, Blogs, Affiliate Marketing">
-  <meta name="author" content="E-Shape Business">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="E-Shape Business - Learn and Earn Smartly"/>
+  <meta name="keywords" content="E-Shape Business, earn money online, affiliate, blog, AI assistant"/>
+  <meta name="author" content="E-Shape Business"/>
   <title>E-Shape Business</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/2763/2763444.png" />
   <style>
-    body { margin: 0; font-family: 'Segoe UI', sans-serif; background: #f4f4f4; color: #333; }
-    header { background: linear-gradient(to right, #c0392b, #f39c12); padding: 20px; text-align: center; color: #fff; }
-    header h1 { font-size: 2.8em; font-family: 'Georgia', serif; text-shadow: 2px 2px #000; letter-spacing: 1px; }
-    nav { background: #222; display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; color: #fff; }
-    nav .nav-links a { color: #fff; text-decoration: none; margin: 0 10px; font-weight: bold; }
-    nav .dropdown { position: relative; display: inline-block; }
-    nav .dropdown-content {
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f6f6f6;
+    }
+    header {
+      background: linear-gradient(to right, #c0392b, #f1c40f);
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: white;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 28px;
+      font-weight: bold;
+      font-family: 'Georgia', serif;
+    }
+    nav {
+      background: #fff;
+      display: flex;
+      padding: 10px;
+      justify-content: space-between;
+      border-bottom: 1px solid #ccc;
+    }
+    nav a {
+      text-decoration: none;
+      margin-right: 15px;
+      color: #333;
+      font-weight: bold;
+    }
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    .dropdown-content {
       display: none;
       position: absolute;
-      background-color: #444;
-      min-width: 200px;
+      right: 0;
+      background-color: #fff;
+      min-width: 180px;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
       z-index: 1;
     }
-    nav .dropdown-content a {
-      color: #fff;
-      padding: 10px 15px;
+    .dropdown-content a {
+      padding: 10px;
       display: block;
       text-decoration: none;
-      border-bottom: 1px solid #666;
+      color: #000;
     }
-    nav .dropdown:hover .dropdown-content { display: block; }
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
     .sidebar {
-      width: 230px;
+      width: 220px;
+      height: 100vh;
       background: #333;
+      color: #fff;
       position: fixed;
-      top: 100px;
+      top: 70px;
       left: 0;
-      bottom: 0;
       padding: 20px;
-      color: #fff;
-      overflow-y: auto;
     }
-    .sidebar h3 { color: gold; margin-bottom: 10px; }
     .sidebar a {
-      color: #fff;
-      text-decoration: none;
       display: block;
-      margin: 10px 0;
-      padding: 8px;
-      border-radius: 4px;
-      background: #444;
+      color: white;
+      text-decoration: none;
+      margin: 15px 0;
     }
-    .sidebar a:hover { background: #555; }
-    .main-content {
-      margin-left: 250px;
+    .main {
+      margin-left: 240px;
       padding: 20px;
     }
     .card {
-      background: #fff;
-      padding: 15px;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
       margin-bottom: 20px;
-      border-radius: 5px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
-    .footer {
-      background: #222;
-      color: #fff;
-      text-align: center;
-      padding: 15px;
-      position: relative;
-      bottom: 0;
-      width: 100%;
+    .ai-box {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #aaa;
+      width: 300px;
+      max-height: 400px;
+      overflow: auto;
+      display: none;
+      flex-direction: column;
     }
-    .dark-mode { background: #121212; color: #fff; }
-    .dark-mode .card { background: #1e1e1e; color: #fff; }
-    .search-bar input {
-      width: 100%;
+    .ai-header {
+      background: #c0392b;
+      color: white;
       padding: 10px;
-      margin: 15px 0;
-      border: 1px solid #ccc;
-      border-radius: 4px;
+      text-align: center;
     }
-    .btn {
-      padding: 10px 15px;
-      background: #e74c3c;
+    .ai-messages {
+      padding: 10px;
+      flex: 1;
+    }
+    .ai-input {
+      display: flex;
+      border-top: 1px solid #ccc;
+    }
+    .ai-input input {
+      flex: 1;
+      padding: 10px;
+      border: none;
+    }
+    .ai-input button {
+      padding: 10px;
+      background: #f1c40f;
+      border: none;
+      cursor: pointer;
+    }
+    #darkToggle {
+      margin-top: 20px;
+      padding: 10px;
+      background: #111;
       color: #fff;
       border: none;
       cursor: pointer;
-      border-radius: 5px;
-      margin: 5px 0;
-    }
-    .btn:hover { background: #c0392b; }
-    input[type="email"], input[type="text"], textarea {
-      width: 100%;
-      padding: 10px;
-      margin: 10px 0;
-      border-radius: 4px;
-      border: 1px solid #ccc;
     }
   </style>
 </head>
 <body>
   <header>
     <h1>E-Shape Business</h1>
-    <p>Your Gateway to Success & Online Earnings</p>
+    <div class="dropdown">
+      <span style="cursor:pointer;">☰ Menu</span>
+      <div class="dropdown-content">
+        <a href="#">Upload Blog</a>
+        <a href="#">Promotions</a>
+        <a href="#">Affiliate Dashboard</a>
+        <a href="#">Withdraw Request</a>
+        <a href="#">Newsletter Signup</a>
+        <a href="#" onclick="toggleDark()">Toggle Dark Mode</a>
+        <a href="https://translate.google.com/translate?sl=auto&u=https://yourwebsite.com" target="_blank">Read in Other Language</a>
+        <a href="#" onclick="toggleAI()">E-Shape Assistant</a>
+      </div>
+    </div>
   </header>
 
   <nav>
-    <div class="nav-links">
+    <div>
       <a href="#">Home</a>
       <a href="#">Blog</a>
       <a href="#">About</a>
       <a href="#">Contact</a>
     </div>
-    <div class="dropdown">
-      <span><i class="fas fa-ellipsis-v fa-lg"></i></span>
-      <div class="dropdown-content">
-        <a href="#">Upload Blog</a>
-        <a href="#">Login / Signup</a>
-        <a href="#">User Profile</a>
-        <a href="#">Newsletter</a>
-        <a href="#">Affiliate Ads</a>
-        <a href="#">Promotions</a>
-        <a href="#">Refer & Earn</a>
-        <a href="#">Downloads</a>
-        <a href="#" onclick="toggleDarkMode()">Toggle Dark Mode</a>
-        <a href="#">Language Translate</a>
-      </div>
-    </div>
   </nav>
 
   <div class="sidebar">
-    <h3>Quick Menu</h3>
-    <a href="#">Create Blog</a>
-    <a href="#">My Dashboard</a>
-    <a href="#">Blog Categories</a>
-    <a href="#">Affiliate Banners</a>
-    <a href="#">Refer & Earn</a>
-    <a href="#">Subscribe Newsletter</a>
-    <a href="#">Promo Countdown</a>
-    <a href="#">Downloads</a>
+    <a href="#">Dashboard</a>
+    <a href="#">My Profile</a>
+    <a href="#">Income Tracker</a>
+    <a href="#">Bank Linking Guide</a>
+    <a href="#">Settings</a>
   </div>
 
-  <div class="main-content">
-    <div class="search-bar">
-      <input type="text" placeholder="Search blogs, tools, tips..." />
-    </div>
-
+  <div class="main">
     <div class="card">
       <h2>Welcome to E-Shape Business</h2>
-      <p>Discover blogs, startup tips, business tools, money making ideas and more...</p>
+      <p>Discover smart ways to earn online. Write blogs, share ideas, and grow your business!</p>
     </div>
 
     <div class="card">
-      <h3>Latest Blog Post</h3>
-      <p>This is a sample blog post. You can dynamically add more blog content in future.</p>
-      <p><strong>Views:</strong> 102 | <strong>Rating:</strong> ★★★★☆</p>
-      <button class="btn">Like</button>
-      <button class="btn">Share</button>
+      <h3>Blog Upload</h3>
+      <form>
+        <input type="text" placeholder="Blog Title" required><br><br>
+        <textarea rows="5" placeholder="Write your blog here..."></textarea><br><br>
+        <button type="submit">Publish Blog</button>
+      </form>
     </div>
 
     <div class="card">
-      <h3>Newsletter Subscription</h3>
-      <input type="email" placeholder="Enter your email..." />
-      <button class="btn">Subscribe</button>
+      <h3>Affiliate Income</h3>
+      <p>Total Earned: ₹0.00</p>
+      <p>Clicks: 0 | Conversions: 0</p>
     </div>
 
     <div class="card">
-      <h3>Affiliate Ads Promotion</h3>
-      <p>Promote products and earn commission using our affiliate banners.</p>
-      <button class="btn">View Ads</button>
+      <h3>Razorpay / Instamojo Setup</h3>
+      <p>Add your payment link here: <input type="text" placeholder="Your Razorpay/Instamojo Link" /></p>
     </div>
 
     <div class="card">
-      <h3>Upload Your Blog</h3>
-      <input type="text" placeholder="Blog Title" />
-      <textarea placeholder="Write your blog here..."></textarea>
-      <button class="btn">Submit Blog</button>
-    </div>
-
-    <div class="card">
-      <h3>Contact Us</h3>
-      <input type="text" placeholder="Your Name" />
-      <input type="email" placeholder="Your Email" />
-      <textarea placeholder="Your Message..."></textarea>
-      <button class="btn">Send</button>
+      <h3>Withdraw Request</h3>
+      <form>
+        <input type="text" placeholder="Bank Account No."><br><br>
+        <input type="text" placeholder="IFSC Code"><br><br>
+        <input type="text" placeholder="Amount"><br><br>
+        <button type="submit">Request Withdraw</button>
+      </form>
     </div>
   </div>
 
-  <div class="footer">
-    © 2025 E-Shape Business | All Rights Reserved.
+  <div class="ai-box" id="aiBox">
+    <div class="ai-header">E-Shape Assistant</div>
+    <div class="ai-messages" id="aiMessages">
+      <p><b>AI:</b> Hi! I'm your assistant. How can I help you today?</p>
+    </div>
+    <div class="ai-input">
+      <input type="text" id="userInput" placeholder="Ask something..." />
+      <button onclick="askAI()">Send</button>
+    </div>
   </div>
 
   <script>
-    function toggleDarkMode() {
-      document.body.classList.toggle('dark-mode');
+    function toggleAI() {
+      var box = document.getElementById("aiBox");
+      box.style.display = box.style.display === "flex" ? "none" : "flex";
+    }
+
+    function askAI() {
+      var input = document.getElementById("userInput").value;
+      var messages = document.getElementById("aiMessages");
+      messages.innerHTML += "<p><b>You:</b> " + input + "</p>";
+      messages.innerHTML += "<p><b>AI:</b> " + getAIResponse(input) + "</p>";
+      document.getElementById("userInput").value = "";
+    }
+
+    function getAIResponse(q) {
+      if (q.toLowerCase().includes("image")) {
+        return "Sorry! Image generation is not supported in this version.";
+      } else if (q.toLowerCase().includes("income")) {
+        return "You can check your earnings in the Affiliate Income section.";
+      } else {
+        return "Thank you for your query. I'm here to assist you!";
+      }
+    }
+
+    function toggleDark() {
+      document.body.classList.toggle("dark-mode");
     }
   </script>
 </body>
