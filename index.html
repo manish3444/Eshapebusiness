@@ -166,3 +166,163 @@ function simulateAI() {
 
 </body>
 </html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="E-Shape Business - Learn, Blog, and Earn Money Online" />
+  <meta name="keywords" content="Earn Money, E-Shape, Business, Blog, Affiliate, AI Assistant" />
+  <meta name="author" content="E-Shape Business" />
+  <title>E-Shape Business</title>
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" type="image/x-icon" />
+  <style>
+    /* Basic Reset and Fonts */
+    * {margin: 0; padding: 0; box-sizing: border-box;}
+    body {font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f9f9f9; color: #333;}
+    header, nav, main, footer {padding: 1rem;}
+    a {text-decoration: none; color: inherit;}
+    ul {list-style: none;}
+
+    /* Header */
+    header {
+      background: linear-gradient(90deg, #ff4b2b, #ff416c);
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-size: 2rem;
+      font-weight: bold;
+      font-family: 'Georgia', serif;
+    }
+    nav ul {
+      display: flex;
+      gap: 1rem;
+    }
+    .dropdown {
+      position: relative;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: white;
+      top: 2rem;
+      right: 0;
+      min-width: 200px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      border-radius: 8px;
+      z-index: 99;
+    }
+    .dropdown-content a {
+      display: block;
+      padding: 0.8rem;
+      color: #333;
+      border-bottom: 1px solid #eee;
+    }
+    .dropdown:hover .dropdown-content {display: block;}
+
+    /* Main Content */
+    main {padding: 2rem;}
+    .blog-post {background: white; padding: 1rem; margin-bottom: 1rem; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);}
+
+    /* Sidebar Layout */
+    .layout {
+      display: flex;
+      flex-direction: row;
+    }
+    aside {
+      width: 250px;
+      padding: 1rem;
+      background-color: #fff;
+      border-right: 1px solid #ddd;
+    }
+    section.content {
+      flex: 1;
+      padding: 1rem;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      background-color: #333;
+      color: white;
+      padding: 1rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .layout {flex-direction: column;}
+      aside {width: 100%; border-right: none; border-bottom: 1px solid #ddd;}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">E-Shape Business</div>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+        <li class="dropdown">
+          <a href="#">⋮</a>
+          <div class="dropdown-content">
+            <a href="#upload">Upload Blog</a>
+            <a href="#login">Login / Signup</a>
+            <a href="#dashboard">Dashboard</a>
+            <a href="#newsletter">Newsletter Signup</a>
+            <a href="#affiliate">Affiliate Tools</a>
+            <a href="#withdraw">Withdraw Request</a>
+            <a href="#darkmode">Dark Mode Toggle</a>
+            <a href="#lang">Language Switch</a>
+            <a href="#assistant">E-Shape Assistant</a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="layout">
+    <aside>
+      <h3>Quick Menu</h3>
+      <ul>
+        <li><a href="#">My Profile</a></li>
+        <li><a href="#">My Blogs</a></li>
+        <li><a href="#">Earnings</a></li>
+        <li><a href="#">Bank Link Guide</a></li>
+        <li><a href="#">Promotions</a></li>
+      </ul>
+    </aside>
+    <section class="content">
+      <div class="blog-post">
+        <h2>Welcome to E-Shape Business</h2>
+        <p>This is your platform to learn, blog, and earn — all from one place.</p>
+      </div>
+      <div class="blog-post">
+        <h3>How to Make Money Without Investment</h3>
+        <p>Write blogs, share your affiliate links, and track your earnings in the dashboard. No technical skills required!</p>
+      </div>
+      <!-- Add more blog posts here -->
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 E-Shape Business. All rights reserved.</p>
+  </footer>
+
+  <!-- AI Assistant Popup -->
+  <div id="assistant" style="position:fixed;bottom:20px;right:20px;background:#fff;padding:1rem;border-radius:8px;box-shadow:0 4px 8px rgba(0,0,0,0.2);width:300px;display:none;">
+    <h4>E-Shape Assistant</h4>
+    <p>Ask me anything about money-making, blogging or affiliate marketing!</p>
+    <input type="text" placeholder="Type your question..." style="width:100%;padding:0.5rem;" />
+  </div>
+  <button onclick="document.getElementById('assistant').style.display='block'" style="position:fixed;bottom:20px;right:20px;background:#ff4b2b;color:#fff;padding:0.5rem 1rem;border:none;border-radius:50%;font-size:1.2rem;">?</button>
+</body>
+</html>
+
+
