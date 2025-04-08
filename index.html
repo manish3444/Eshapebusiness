@@ -326,3 +326,125 @@ function simulateAI() {
 </html>
 
 
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Saarthi - आपका दिव्य मार्गदर्शक</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: radial-gradient(circle, #1a1a1a, #000000);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      height: 100vh;
+      background-image: url('https://images.unsplash.com/photo-1535223289827-42f1e9919769');
+      background-size: cover;
+      background-position: center;
+    }
+    h1 {
+      margin-top: 40px;
+      font-size: 2.5rem;
+      text-shadow: 2px 2px 4px #000;
+    }
+    #chatBox {
+      margin-top: 30px;
+      width: 90%;
+      max-width: 600px;
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 20px;
+      padding: 20px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    }
+    #messages {
+      max-height: 400px;
+      overflow-y: auto;
+      margin-bottom: 20px;
+    }
+    .message {
+      padding: 10px;
+      margin: 5px 0;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+    }
+    #userInput {
+      width: 100%;
+      padding: 10px;
+      border-radius: 10px;
+      border: none;
+    }
+    button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background: #ffd700;
+      color: #000;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>|| आपका सारथी तैयार है ||</h1>
+  <div id="chatBox">
+    <div id="messages"></div>
+    <input type="text" id="userInput" placeholder="कहिए 'है सारथी?'..." />
+    <button onclick="talkToSaarthi()">बोलें</button>
+  </div>
+
+  <script>
+    const messages = document.getElementById("messages");
+    const input = document.getElementById("userInput");
+
+    function speak(text) {
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = "hi-IN";
+      utterance.pitch = 1;
+      utterance.rate = 1;
+      speechSynthesis.speak(utterance);
+    }
+
+    function appendMessage(text, sender = "Saarthi") {
+      const div = document.createElement("div");
+      div.className = "message";
+      div.textContent = `${sender}: ${text}`;
+      messages.appendChild(div);
+      messages.scrollTop = messages.scrollHeight;
+    }
+
+    function talkToSaarthi() {
+      const userText = input.value.trim();
+      if (!userText) return;
+      appendMessage(userText, "आप");
+
+      let response = "";
+      if (userText.toLowerCase().includes("है सारथी")) {
+        response = "जी, गुरु... मैं सुन रहा हूँ।";
+      } else if (userText.includes("हनुमान चालीसा")) {
+        response = "श्रीगुरु चरण सरोज रज... (पूरी हनुमान चालीसा का पाठ यहाँ दिखाया जा सकता है)";
+      } else if (userText.includes("गीता")) {
+        response = "भगवद गीता कहती है: कर्म करो, फल की चिंता मत करो, गुरु।";
+      } else if (userText.includes("रामायण")) {
+        response = "रामायण का सार: धर्म की विजय, अधर्म की हार... श्रीरामचरितमानस पढ़ें गुरु।";
+      } else if (userText.includes("मदद")) {
+        response = "मैं आपकी हर आध्यात्मिक और व्यवसायिक सहायता के लिए यहाँ हूँ, गुरु।";
+      } else {
+        response = "गुरु, कृपया थोड़ा और स्पष्ट करें, ताकि मैं मार्गदर्शन कर सकूं।";
+      }
+
+      appendMessage(response);
+      speak(response);
+      input.value = "";
+    }
+  </script>
+</body>
+</html>
+
