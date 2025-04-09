@@ -552,3 +552,94 @@ function simulateAI() {
 </body>
 </html>
 
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>सारथी - आपका वॉइस असिस्टेंट</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: radial-gradient(circle, #01012b, #000);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+    #output {
+      margin-top: 20px;
+      font-size: 1.5rem;
+      color: #00ffcc;
+    }
+    button {
+      padding: 15px 25px;
+      font-size: 1.2rem;
+      border: none;
+      background: #00ffcc;
+      color: #000;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #00d4aa;
+    }
+  </style>
+</head>
+<body>
+  <h1>सारथी आपका स्वागत करता है</h1>
+  <p>जब आप कहें: <strong>"हाय सारथी"</strong> तो जवाब आएगा <strong>"जी गुरु"</strong></p>
+  <button onclick="startListening()">सारथी से बात करें</button>
+  <div id="output"></div>
+
+  <script>
+    const output = document.getElementById("output");
+    const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+    recognition.lang = "hi-IN";
+    recognition.interimResults = false;
+    recognition.maxAlternatives = 1;
+
+    function startListening() {
+      output.textContent = "सुन रहा हूँ गुरु...";
+      recognition.start();
+    }
+
+    recognition.onresult = function (event) {
+      const transcript = event.results[0][0].transcript.trim().toLowerCase();
+      console.log("User said:", transcript);
+
+      if (transcript.includes("हाय सारथी")) {
+        speak("जी गुरु");
+        output.textContent = "जी गुरु";
+      } else if (transcript.includes("रामायण") || transcript.includes("हनुमान चालीसा")) {
+        speak("गुरु, मैं आपको रामायण और हनुमान चालीसा से जुड़ी जानकारी देने के लिए तैयार हूँ।");
+        output.textContent = "रामायण और चालीसा की जानकारी देने के लिए तैयार हूँ।";
+      } else {
+        speak("माफ कीजिए गुरु, मैं उसे अभी नहीं समझ पाया। कृपया पुनः पूछें।");
+        output.textContent = "माफ कीजिए गुरु, मैं उसे अभी नहीं समझ पाया। कृपया पुनः पूछें।";
+      }
+    };
+
+    function speak(text) {
+      const synth = window.speechSynthesis;
+      const utter = new SpeechSynthesisUtterance(text);
+      utter.lang = "hi-IN";
+      utter.pitch = 1;
+      utter.rate = 0.95;
+      synth.speak(utter);
+    }
+  </script>
+</body>
+</html>
+
+
