@@ -3,194 +3,347 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-Shape Business | AI President</title>
+    <title>E-Shape Business | Computer Knowledge Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
     <style>
-        /* Basic Reset and Font */
+        /* Global Styles */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #f0f2f5; /* Light Gray Background */
             color: #333;
         }
-
-        /* Header and Navigation Styling */
-        header {
-            background-color: #000;
-            color: white;
-            padding: 15px 0;
-            text-align: center;
-        }
-        .logo {
-            font-size: 28px;
-            font-weight: bold;
-            color: #ffcc00; /* Yellow highlight */
-        }
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 10px 0 0 0;
+        
+        /* Wallpaper / Hero Section */
+        .hero-section {
+            background: url('https://images.unsplash.com/photo-1537498425277-c283d32ef9db?q=80&w=1978&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center/cover;
+            height: 400px;
             display: flex;
+            flex-direction: column;
             justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            position: relative;
         }
-        nav ul li {
-            margin: 0 15px;
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.6); /* Dark overlay */
         }
-        nav ul li a {
+        .hero-content {
+            z-index: 1;
+        }
+        .hero-content h1 {
+            font-size: 3.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px #000;
+        }
+        .hero-content p {
+            font-size: 1.2em;
+            max-width: 600px;
+        }
+
+        /* Top Red Bar (Moti Patti) */
+        .top-bar {
+            background-color: #c0392b; /* Red Color */
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .site-name {
+            font-size: 1.8em;
+            font-weight: 700;
+        }
+
+        /* Main Navigation */
+        .main-nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+        .main-nav ul li a {
             color: white;
             text-decoration: none;
-            font-weight: bold;
+            padding: 10px 15px;
+            display: block;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+        .main-nav ul li a:hover {
+            background-color: #e74c3c; /* Lighter Red */
+        }
+
+        /* Three-Dot Menu (User Controls) */
+        .user-menu-container {
+            position: relative;
+        }
+        .menu-btn {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
             padding: 5px 10px;
             transition: color 0.3s;
         }
-        nav ul li a:hover {
-            color: #ffcc00;
+        .menu-btn:hover {
+            color: #f1c40f; /* Yellow for hover */
         }
-
-        /* Main Content Section */
-        .container {
-            width: 80%;
-            margin: 20px auto;
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            right: 0;
             background-color: white;
-            padding: 30px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            min-width: 150px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            z-index: 10;
+            border-radius: 5px;
+        }
+        .dropdown-menu a {
+            color: #333;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.2s;
+            font-size: 0.9em;
+        }
+        .dropdown-menu a:hover {
+            background-color: #f1f1f1;
+        }
+        .show {
+            display: block;
         }
 
-        h2 {
-            color: #0056b3;
-            border-bottom: 2px solid #ffcc00;
-            padding-bottom: 5px;
-            margin-top: 25px;
-        }
-
-        /* Highlight Section */
-        .highlight {
-            text-align: center;
-            margin: 30px 0;
+        /* Main Content Layout */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 30px auto;
             padding: 20px;
-            background-color: #fffacd; /* Light yellow background */
-            border: 2px solid #ffcc00;
-            font-size: 20px;
-            font-weight: bold;
-            color: #cc6600;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
 
-        /* Typing Practice Area (Basic Functionality) */
-        #typing-area {
-            width: 100%;
-            height: 150px;
-            padding: 10px;
-            font-size: 16px;
-            border: 1px solid #ccc;
-            box-sizing: border-box;
-            resize: none;
+        /* Course List Styling */
+        .course-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
         }
-        .typing-controls {
-            margin-top: 10px;
-            text-align: center;
-        }
-        .typing-controls button {
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: white;
-            border: none;
+        .course-card {
+            background-color: #ecf0f1;
+            padding: 25px;
+            border-radius: 8px;
+            transition: transform 0.3s, box-shadow 0.3s;
             cursor: pointer;
         }
-        .typing-controls button:hover {
-            background-color: #0056b3;
+        .course-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        }
+        .course-card h3 {
+            color: #2c3e50;
+            margin-top: 0;
+        }
+        .course-card p {
+            font-size: 0.9em;
+            color: #7f8c8d;
+        }
+
+        /* Rating Section */
+        .rating-section {
+            text-align: center;
+            padding: 30px 0;
+            border-top: 1px solid #eee;
+            margin-top: 40px;
+        }
+        .stars i {
+            font-size: 2em;
+            color: #f39c12; /* Gold/Orange for stars */
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .stars i:hover {
+            transform: scale(1.1);
         }
 
         /* Footer */
         footer {
             text-align: center;
             padding: 20px;
-            margin-top: 40px;
-            background-color: #333;
+            background-color: #2c3e50;
             color: white;
+            margin-top: 40px;
         }
-        .footer-logo {
-            font-size: 20px;
-            font-weight: bold;
-            color: #ffcc00;
-        }
-        .contact-info {
-            margin-top: 10px;
+        footer p {
+            margin: 5px 0;
         }
 
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="logo">E-Shape Business</div>
-        <nav>
+    <div class="top-bar">
+        <div class="site-name">E-Shape Business</div>
+        
+        <div class="main-nav">
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
-                </ul>
-        </nav>
-    </header>
+                <li><a href="#home">HOME</a></li>
+                <li><a href="#courses">COURSES</a></li>
+                <li><a href="#basics">BASICS</a></li>
+                <li><a href="#notes">NOTES</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+            </ul>
+        </div>
+        
+        <div class="user-menu-container">
+            <button class="menu-btn" onclick="toggleDropdown()">
+                <i class="fas fa-ellipsis-v"></i>
+            </button>
+            <div id="userDropdown" class="dropdown-menu">
+                <a href="#"><i class="fas fa-user"></i> Profile</a>
+                <a href="#"><i class="fas fa-sign-in-alt"></i> Login / Register</a>
+                <a href="#"><i class="fas fa-cog"></i> Settings</a>
+                <a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="home" class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Welcome to the Digital World</h1>
+            <p>ज्यादा से ज्यादा कंप्यूटर नॉलेज प्राप्त करें। बेसिक पार्ट्स से लेकर एडवांस प्रोग्रामिंग तक, सब कुछ यहाँ है।</p>
+        </div>
+    </div>
 
     <div class="container">
+        
+        <h2 id="courses" style="color: #c0392b;">💻 हमारे प्रमुख कंप्यूटर कोर्स</h2>
+        <p>अपने पसंद के कोर्स पर क्लिक करके नोट्स और क्लास शुरू करें।</p>
+        
+        <div class="course-list">
+            
+            <div class="course-card">
+                <h3><i class="fas fa-graduation-cap"></i> CCC (Course on Computer Concepts)</h3>
+                <p>सरकारी नौकरी और बेसिक कंप्यूटर समझ के लिए ज़रूरी।</p>
+                <a href="#" style="color: #2980b9; text-decoration: none;">View Details →</a>
+            </div>
+            
+            <div class="course-card">
+                <h3><i class="fas fa-code"></i> C++ Programming</h3>
+                <p>प्रोग्रामिंग की नींव मजबूत करें और OOPs कॉन्सेप्ट सीखें।</p>
+                <a href="#" style="color: #2980b9; text-decoration: none;">View Details →</a>
+            </div>
+            
+            <div class="course-card">
+                <h3><i class="fas fa-laptop-code"></i> O-Level (Foundation Course)</h3>
+                <p>NIELIT द्वारा मान्यता प्राप्त, एक साल का व्यापक कोर्स।</p>
+                <a href="#" style="color: #2980b9; text-decoration: none;">View Details →</a>
+            </div>
+            
+            <div class="course-card">
+                <h3><i class="fas fa-file-alt"></i> MS-Office Suite</h3>
+                <p>Word, Excel और PowerPoint में विशेषज्ञता प्राप्त करें।</p>
+                <a href="#" style="color: #2980b9; text-decoration: none;">View Details →</a>
+            </div>
 
-        <h1>Welcome to E-Shape Business</h1>
-        <p>This is your platform to learn, blog, and earn — all from one place.</p>
-
-        <div class="highlight">
-            || आपका सारथी तैयार है ||
+            <div class="course-card">
+                <h3><i class="fas fa-tools"></i> Basic Computer Parts</h3>
+                <p>कंप्यूटर हार्डवेयर और पार्ट्स की पूरी जानकारी।</p>
+                <a href="#" style="color: #2980b9; text-decoration: none;">View Details →</a>
+            </div>
+            
         </div>
+        
+        <hr style="margin: 40px 0; border-color: #eee;">
 
-        <h2>Basic Computer Courses</h2>
-        <p>This website provides complete computer education from basic to intermediate with AI-powered learning.</p>
-        <ul>
-            <li>Parts of Computer (Monitor, CPU, Keyboard, Mouse)</li>
-            <li>MS Word, Excel, PowerPoint</li>
-            <li>Internet & Email Basics</li>
-            <li>Operating System (Windows, Linux)</li>
-        </ul>
+        <h2 id="basics" style="color: #c0392b;">📚 कंप्यूटर बेसिक और नोट्स</h2>
+        <p>यह सेक्शन आपके लिए सभी आवश्यक जानकारी, ट्यूटोरियल और नोट्स प्रदान करता है।</p>
+        
+        <div id="notes">
+            <h3 style="color: #34495e;">1. कंप्यूटर के मुख्य भाग (Basic Components)</h3>
+            <p>CPU, Motherboard, RAM, Hard Disk: उनके कार्य और महत्व को समझें।</p>
 
-        <h2>Typing Practice</h2>
-        <p>Improve your typing speed here:</p>
-        <textarea id="typing-area" placeholder="Start typing here..."></textarea>
-        <div class="typing-controls">
-            <button onclick="resetTyping()">Reset</button>
-            <p id="result-message" style="margin-top: 10px; color: green;"></p>
+            <h3 style="color: #34495e;">2. ऑपरेटिंग सिस्टम (OS) क्लास</h3>
+            <p>Windows और Linux का परिचय, फ़ाइल मैनेजमेंट और शॉर्टकट कीज़।</p>
+
+            <h3 style="color: #34495e;">3. क्लास नोट्स और स्टडी मटेरियल</h3>
+            <p>सभी कोर्सेस के लिए PDF नोट्स और अभ्यास प्रश्न (Practice Questions) यहाँ उपलब्ध हैं।</p>
         </div>
+        
+        <h2 id="contact" style="color: #c0392b; margin-top: 50px;">📧 हमसे संपर्क करें</h2>
+        <p>किसी भी प्रश्न या सहायता के लिए हमें ईमेल करें या सोशल मीडिया पर फ़ॉलो करें।</p>
+        <p>ईमेल: **contact@e-shapebusiness.com**</p>
 
-        <h2>Computer Test</h2>
-        <p>Check your computer knowledge with our online test.</p>
-        <form>
-            <p>1. What does CPU stand for?</p>
-            <input type="radio" name="q1" value="A"> Central Power Unit<br>
-            <input type="radio" name="q1" value="B"> Central Processing Unit<br>
-            <input type="radio" name="q1" value="C"> Computer Processing Unit<br>
-        </form>
-        <button style="margin-top: 15px; padding: 10px; background-color: #f39c12; color: white; border: none;">Submit Test</button>
+    </div>
 
-
-        <h2 id="contact">About Us</h2>
-        <p>This platform is designed to teach computer knowledge and skills using AI-based learning in a smart, interactive way.</p>
-        <p>Email: **info@aipresident.com**</p>
+    <div class="rating-section">
+        <h2 style="color: #333; margin-bottom: 15px;">हमें रेटिंग दें!</h2>
+        <div class="stars">
+            <i class="fas fa-star" onclick="setRating(1)"></i>
+            <i class="fas fa-star" onclick="setRating(2)"></i>
+            <i class="fas fa-star" onclick="setRating(3)"></i>
+            <i class="fas fa-star" onclick="setRating(4)"></i>
+            <i class="fas fa-star" onclick="setRating(5)"></i>
+        </div>
+        <p id="rating-message" style="margin-top: 10px; color: #27ae60;">आपकी रेटिंग का धन्यवाद!</p>
     </div>
 
     <footer>
-        <div class="footer-logo">AI President</div>
-        <p>© 2025 AI President. All rights reserved.</p>
+        <p>&copy; 2025 E-Shape Business. All Rights Reserved.</p>
+        <p>Developed by: **Manish Pandit**</p>
     </footer>
 
     <script>
-        function resetTyping() {
-            document.getElementById('typing-area').value = '';
-            document.getElementById('result-message').innerText = 'Typing area has been reset.';
-            setTimeout(() => {
-                document.getElementById('result-message').innerText = '';
-            }, 3000);
+        // Function to toggle the Three-Dot Dropdown Menu
+        function toggleDropdown() {
+            document.getElementById("userDropdown").classList.toggle("show");
         }
 
-        // Note: Full typing test logic requires more complex JavaScript.
-        // This is a basic function to show JS is working.
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function(event) {
+            if (!event.target.matches('.menu-btn') && !event.target.matches('.menu-btn i')) {
+                var dropdowns = document.getElementsByClassName("dropdown-menu");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+
+        // Basic Rating Function (Visual Only)
+        function setRating(rating) {
+            const stars = document.querySelectorAll('.stars i');
+            stars.forEach((star, index) => {
+                if (index < rating) {
+                    star.style.color = '#f39c12'; // Filled Star
+                } else {
+                    star.style.color = '#ccc'; // Unfilled Star
+                }
+            });
+            document.getElementById('rating-message').innerText = 'आपने हमें ' + rating + ' स्टार दिए! धन्यवाद!';
+        }
+        
+        // Initial call to set default stars
+        setRating(0); 
     </script>
 </body>
 </html>
