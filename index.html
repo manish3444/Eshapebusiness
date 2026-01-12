@@ -1,763 +1,198 @@
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="E-Shape Business - Learn, Blog, and Earn Money Online" />
-  <meta name="keywords" content="Earn Money, E-Shape, Business, Blog, Affiliate, AI Assistant" />
-  <meta name="author" content="E-Shape Business" />
-  <title>E-Shape Business</title>
-  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" type="image/x-icon" />
-  <style>
-    /* Basic Reset and Fonts */
-    * {margin: 0; padding: 0; box-sizing: border-box;}
-    body {font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f9f9f9; color: #333;}
-    header, nav, main, footer {padding: 1rem;}
-    a {text-decoration: none; color: inherit;}
-    ul {list-style: none;}
-
-    /* Header */
-    header {
-      background: linear-gradient(90deg, #ff4b2b, #ff416c);
-      color: white;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .logo {
-      font-size: 2rem;
-      font-weight: bold;
-      font-family: 'Georgia', serif;
-    }
-    nav ul {
-      display: flex;
-      gap: 1rem;
-    }
-    .dropdown {
-      position: relative;
-    }
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: white;
-      top: 2rem;
-      right: 0;
-      min-width: 200px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-      border-radius: 8px;
-      z-index: 99;
-    }
-    .dropdown-content a {
-      display: block;
-      padding: 0.8rem;
-      color: #333;
-      border-bottom: 1px solid #eee;
-    }
-    .dropdown:hover .dropdown-content {display: block;}
-
-    /* Main Content */
-    main {padding: 2rem;}
-    .blog-post {background: white; padding: 1rem; margin-bottom: 1rem; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);}
-
-    /* Sidebar Layout */
-    .layout {
-      display: flex;
-      flex-direction: row;
-    }
-    aside {
-      width: 250px;
-      padding: 1rem;
-      background-color: #fff;
-      border-right: 1px solid #ddd;
-    }
-    section.content {
-      flex: 1;
-      padding: 1rem;
-    }
-
-    /* Footer */
-    footer {
-      text-align: center;
-      background-color: #333;
-      color: white;
-      padding: 1rem;
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      .layout {flex-direction: column;}
-      aside {width: 100%; border-right: none; border-bottom: 1px solid #ddd;}
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <div class="logo">E-Shape Business</div>
-    <nav>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Blog</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
-        <li class="dropdown">
-          <a href="#">⋮</a>
-          <div class="dropdown-content">
-            <a href="#upload">Upload Blog</a>
-            <a href="#login">Login / Signup</a>
-            <a href="#dashboard">Dashboard</a>
-            <a href="#newsletter">Newsletter Signup</a>
-            <a href="#affiliate">Affiliate Tools</a>
-            <a href="#withdraw">Withdraw Request</a>
-            <a href="#darkmode">Dark Mode Toggle</a>
-            <a href="#lang">Language Switch</a>
-            <a href="#assistant">E-Shape Assistant</a>
-          </div>
-        </li>
-      </ul>
-    </nav>
-  </header>
-
-  <div class="layout">
-    <aside>
-      <h3>Quick Menu</h3>
-      <ul>
-        <li><a href="#">My Profile</a></li>
-        <li><a href="#">My Blogs</a></li>
-        <li><a href="#">Earnings</a></li>
-        <li><a href="#">Bank Link Guide</a></li>
-        <li><a href="#">Promotions</a></li>
-      </ul>
-    </aside>
-    <section class="content">
-      <div class="blog-post">
-        <h2>Welcome to E-Shape Business</h2>
-        <p>This is your platform to learn, blog, and earn — all from one place.</p>
-      </div>
-      <div class="blog-post">
-        <h3>How to Make Money Without Investment</h3>
-        <p>Write blogs, share your affiliate links, and track your earnings in the dashboard. No technical skills required!</p>
-      </div>
-      <!-- Add more blog posts here -->
-    </section>
-  </div>
-
-  <footer>
-    <p>&copy; 2025 E-Shape Business. All rights reserved.</p>
-  </footer>
-
-  <!-- AI Assistant Popup -->
-  <div id="assistant" style="position:fixed;bottom:20px;right:20px;background:#fff;padding:1rem;border-radius:8px;box-shadow:0 4px 8px rgba(0,0,0,0.2);width:300px;display:none;">
-    <h4>E-Shape Assistant</h4>
-    <p>Ask me anything about money-making, blogging or affiliate marketing!</p>
-    <input type="text" placeholder="Type your question..." style="width:100%;padding:0.5rem;" />
-  </div>
-  <button onclick="document.getElementById('assistant').style.display='block'" style="position:fixed;bottom:20px;right:20px;background:#ff4b2b;color:#fff;padding:0.5rem 1rem;border:none;border-radius:50%;font-size:1.2rem;">?</button>
-</body>
-</html>
-
-
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="hi">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Saarthi - आपका दिव्य मार्गदर्शक</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ठंडी में मजा</title>
   <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: radial-gradient(circle, #1a1a1a, #000000);
-      color: #fff;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      height: 100vh;
-      background-image: url('https://images.unsplash.com/photo-1535223289827-42f1e9919769');
-      background-size: cover;
-      background-position: center;
+    :root {
+      --bg1: #e0f7fa;
+      --bg2: #e8f5e9;
+      --card: #ffffff;
+      --accent: #0288d1;
+      --success: #2e7d32;
+      --danger: #c62828;
+      font-family: "Segoe UI", Roboto, "Noto Sans", Arial, sans-serif;
     }
-    h1 {
-      margin-top: 40px;
-      font-size: 2.5rem;
-      text-shadow: 2px 2px 4px #000;
+    body{
+      margin:0;
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:linear-gradient(135deg,var(--bg1),var(--bg2));
+      color:#0b2540;
     }
-    #chatBox {
-      margin-top: 30px;
-      width: 90%;
-      max-width: 600px;
-      background: rgba(0, 0, 0, 0.6);
-      border-radius: 20px;
-      padding: 20px;
-      box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    .wrap{
+      width:100%;
+      max-width:520px;
+      margin:24px;
     }
-    #messages {
-      max-height: 400px;
-      overflow-y: auto;
-      margin-bottom: 20px;
+    .card{
+      background:var(--card);
+      border-radius:12px;
+      padding:22px;
+      box-shadow:0 10px 30px rgba(2,24,38,0.08);
+      text-align:center;
     }
-    .message {
-      padding: 10px;
-      margin: 5px 0;
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 10px;
+    h1{
+      margin:0 0 6px 0;
+      font-size:28px;
+      color:var(--accent);
     }
-    #userInput {
-      width: 100%;
-      padding: 10px;
-      border-radius: 10px;
-      border: none;
+    p.lead{
+      margin:0 0 18px 0;
+      color:#2f4f60;
     }
-    button {
-      margin-top: 10px;
-      padding: 10px 20px;
-      background: #ffd700;
-      color: #000;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      font-weight: bold;
+    label{
+      display:block;
+      text-align:left;
+      margin:12px 0 6px 0;
+      font-weight:600;
+    }
+    input[type="text"], .file-row{
+      width:100%;
+      box-sizing:border-box;
+      padding:10px 12px;
+      border-radius:8px;
+      border:1px solid #dfecec;
+      font-size:15px;
+    }
+    .file-row{
+      display:flex;
+      gap:10px;
+      align-items:center;
+    }
+    .file-row input[type="file"]{
+      flex:1;
+    }
+    .preview{
+      width:86px;
+      height:86px;
+      border-radius:8px;
+      border:1px dashed #cfeaea;
+      object-fit:cover;
+      background:#f7fdfd;
+    }
+    .btn{
+      display:inline-block;
+      margin-top:16px;
+      padding:10px 18px;
+      background:var(--accent);
+      color:white;
+      border:none;
+      border-radius:10px;
+      font-size:16px;
+      cursor:pointer;
+      transition:transform .08s ease;
+    }
+    .btn:active{ transform:translateY(1px); }
+    .msg{
+      margin-top:14px;
+      padding:12px;
+      border-radius:8px;
+      font-weight:600;
+    }
+    .msg.success{ background:#e8f5e9; color:var(--success); border:1px solid rgba(46,125,50,0.12); }
+    .msg.error{ background:#ffebee; color:var(--danger); border:1px solid rgba(198,40,40,0.12); }
+    .note{
+      margin-top:12px;
+      font-size:13px;
+      color:#40606a;
+    }
+    footer.small{
+      margin-top:16px;
+      font-size:12px;
+      color:#6b7f86;
     }
   </style>
 </head>
 <body>
-  <h1>|| आपका सारथी तैयार है ||</h1>
-  <div id="chatBox">
-    <div id="messages"></div>
-    <input type="text" id="userInput" placeholder="कहिए 'है सारथी?'..." />
-    <button onclick="talkToSaarthi()">बोलें</button>
+  <div class="wrap">
+    <div class="card">
+      <h1>ठंडी में मजा</h1>
+      <p class="lead">रज़ाई और कंबल को आधार के साथ मस्ती में "लिंक" करने का छोटा-पॉकेट डेमो।</p>
+
+      <label for="aadhaar">आधार नंबर (डमी/टेस्ट के लिए 12 अंकों का नंबर डालें)</label>
+      <input id="aadhaar" type="text" placeholder="उदा. 123412341234" inputmode="numeric" maxlength="12" />
+
+      <label style="margin-top:12px;">फोटो अपलोड करें</label>
+      <div class="file-row">
+        <input id="photo" type="file" accept="image/*" />
+        <img id="preview" class="preview" alt="प्रिव्यू" src="" />
+      </div>
+
+      <button id="donateBtn" class="btn">दान करें</button>
+
+      <div id="message" aria-live="polite"></div>
+
+      <p class="note">नोट: अपनी रजाई और कम्बल को आधार कार्ड लिंक करें ताकि आपको ठंडी ना लगे।</p>
+      <footer class="small">फन-टेक © ठंडी में मजा</footer>
+    </div>
   </div>
 
   <script>
-    const messages = document.getElementById("messages");
-    const input = document.getElementById("userInput");
+    const aadInput = document.getElementById('aadhaar');
+    const photoInput = document.getElementById('photo');
+    const preview = document.getElementById('preview');
+    const btn = document.getElementById('donateBtn');
+    const msg = document.getElementById('message');
 
-    function speak(text) {
-      const utterance = new SpeechSynthesisUtterance(text);
-      utterance.lang = "hi-IN";
-      utterance.pitch = 1;
-      utterance.rate = 1;
-      speechSynthesis.speak(utterance);
-    }
+    // फोटो प्रिव्यू
+    photoInput.addEventListener('change', () => {
+      const f = photoInput.files && photoInput.files[0];
+      if(!f){ preview.src = ''; return; }
+      if(!f.type.startsWith('image/')) {
+        preview.src = '';
+        showMessage('कृपया एक मान्य छवि फ़ाइल चुनें।', 'error');
+        return;
+      }
+      const reader = new FileReader();
+      reader.onload = e => preview.src = e.target.result;
+      reader.readAsDataURL(f);
+      clearMessage();
+    });
 
-    function appendMessage(text, sender = "Saarthi") {
-      const div = document.createElement("div");
-      div.className = "message";
-      div.textContent = `${sender}: ${text}`;
-      messages.appendChild(div);
-      messages.scrollTop = messages.scrollHeight;
-    }
+    // उपयोगकर्ता की सुविधा के लिए केवल अंकों की अनुमति (UI मदद)
+    aadInput.addEventListener('input', () => {
+      // non-digits हटाएँ
+      aadInput.value = aadInput.value.replace(/\D/g,'').slice(0,12);
+    });
 
-    function talkToSaarthi() {
-      const userText = input.value.trim();
-      if (!userText) return;
-      appendMessage(userText, "आप");
+    btn.addEventListener('click', () => {
+      clearMessage();
+      const aad = aadInput.value.trim();
+      const file = photoInput.files && photoInput.files[0];
 
-      let response = "";
-      if (userText.toLowerCase().includes("है सारथी")) {
-        response = "जी, गुरु... मैं सुन रहा हूँ।";
-      } else if (userText.includes("हनुमान चालीसा")) {
-        response = "श्रीगुरु चरण सरोज रज... (पूरी हनुमान चालीसा का पाठ यहाँ दिखाया जा सकता है)";
-      } else if (userText.includes("गीता")) {
-        response = "भगवद गीता कहती है: कर्म करो, फल की चिंता मत करो, गुरु।";
-      } else if (userText.includes("रामायण")) {
-        response = "रामायण का सार: धर्म की विजय, अधर्म की हार... श्रीरामचरितमानस पढ़ें गुरु।";
-      } else if (userText.includes("मदद")) {
-        response = "मैं आपकी हर आध्यात्मिक और व्यवसायिक सहायता के लिए यहाँ हूँ, गुरु।";
-      } else {
-        response = "गुरु, कृपया थोड़ा और स्पष्ट करें, ताकि मैं मार्गदर्शन कर सकूं।";
+      if(!/^\d{12}$/.test(aad)){
+        showMessage('कृपया 12 अंकों का आधार नंबर डालें (यह जस्ट डेमो के लिए है)।', 'error');
+        return;
+      }
+      if(!file){
+        showMessage('कृपया पहले फोटो अपलोड करें।', 'error');
+        return;
       }
 
-      appendMessage(response);
-      speak(response);
-      input.value = "";
+      // सुरक्षा नोट: हम पूरा आधार स्टोर/सबमिट नहीं कर रहे। केवल मज़ाक के लिए मास्क दिखाएँ।
+      const last4 = aad.slice(-4);
+      const masked = '**** **** **** ' + last4;
+
+      // दिखाएँ सफल मैसेज
+      showMessage('सफलतापूर्वक आपकी फोटो और आधार लिंक कर दिया गया।<br>' +
+                  'लिंक किया गया आधार: ' + masked + '<br>' +
+                  'अब आपकी रज़ाई और कंबल तैयार हैं — ठंडी में मज़ा!', 'success');
+
+      // यह एक मज़ाक/लोकल-डेमो है; असली डेटा सर्वर पर न भेजें।
+      // नीचे एक मज़ेदार एनिमेटेड प्रभाव:
+      btn.textContent = 'लिंक हो गया ✓';
+      setTimeout(() => btn.textContent = 'दान करें', 2200);
+    });
+
+    function showMessage(text, type){
+      msg.innerHTML = `<div class="msg ${type}">${text}</div>`;
     }
+    function clearMessage(){ msg.innerHTML = ''; }
   </script>
-</body>
-</html>
-
-
-
-
-<!DOCTYPE html>
-<html lang="hi">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>सारथी | आपका दिव्य सहायक</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background: radial-gradient(ellipse at center, #1b2735 0%, #090a0f 100%);
-      color: #fff;
-      font-family: 'Segoe UI', sans-serif;
-      text-align: center;
-    }
-    h1 {
-      margin-top: 50px;
-      font-size: 3rem;
-      color: gold;
-      text-shadow: 2px 2px 10px #ffcc00;
-    }
-    #chat {
-      max-width: 600px;
-      margin: 40px auto;
-
-
-    function speak(text) {
-      const synth = window.speechSynthesis;
-      const utter = new SpeechSynthesisUtterance(text);
-      utter.lang = "hi-IN";
-      utter.pitch = 1;
-      utter.rate = 0.95;
-      synth.speak(utter);
-    }
-  </script>
-</body>
-</html>
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI President – Smart Computer Learning Platform</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: Arial, sans-serif;
-      background: #f7f9fb;
-      color: #222;
-    }
-    header {
-      background: linear-gradient(to right, #1e3c72, #2a5298);
-      color: #fff;
-      padding: 20px;
-      text-align: center;
-      font-size: 2.5em;
-      font-weight: bold;
-      text-shadow: 2px 2px 5px #000;
-      letter-spacing: 2px;
-      transform: perspective(500px) rotateX(3deg);
-    }
-    nav {
-      display: flex;
-      justify-content: space-around;
-      background: #333;
-      padding: 10px;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      padding: 8px 16px;
-    }
-    nav a:hover {
-      background: #555;
-      border-radius: 4px;
-    }
-    main {
-      max-width: 1000px;
-      margin: auto;
-      padding: 20px;
-    }
-    section {
-      margin-bottom: 30px;
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-    h2 {
-      margin-bottom: 10px;
-    }
-    .course-img {
-      width: 100%;
-      max-height: 250px;
-      object-fit: cover;
-      border-radius: 8px;
-      margin-top: 10px;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #222;
-      color: white;
-    }
-    .language-switch {
-      text-align: right;
-      margin-bottom: 10px;
-    }
-    .chatbot-button {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #2a5298;
-      color: white;
-      padding: 10px 16px;
-      border: none;
-      border-radius: 50%;
-      font-size: 20px;
-      cursor: pointer;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-    }
-    .chatbot-popup {
-      display: none;
-      position: fixed;
-      bottom: 80px;
-      right: 20px;
-      background: white;
-      width: 300px;
-      height: 400px;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-      overflow: hidden;
-      z-index: 1000;
-    }
-    .chatbot-popup iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
-  </style>
-  <script>
-    function toggleChatbot() {
-      var bot = document.getElementById('chatbot');
-      bot.style.display = bot.style.display === 'block' ? 'none' : 'block';
-    }
-    function submitTest() {
-      alert('Thanks for submitting the test! Your answers have been recorded.');
-    }
-  </script>
-</head>
-<body>
-  <header>AI President – Smart Computer Learning Platform</header>
-
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#courses">Courses</a>
-    <a href="#typing">Typing Practice</a>
-    <a href="#test">Test</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
-  </nav>
-
-  <main>
-    <div class="language-switch">
-      <label>Language: </label>
-      <select>
-        <option>English</option>
-        <option>हिंदी</option>
-      </select>
-    </div>
-
-    <section id="home">
-      <h2>Welcome to AI President</h2>
-      <p>This website provides complete computer education from basics to intermediate with AI-powered learning.</p>
-    </section>
-
-    <section id="courses">
-      <h2>Basic Computer Courses</h2>
-      <ul>
-        <li>Introduction to Computers</li>
-        <li>Parts of Computer (Monitor, CPU, Keyboard, Mouse)</li>
-        <li>MS Paint, Notepad</li>
-        <li>MS Word, Excel, PowerPoint</li>
-        <li>Internet & Email Basics</li>
-        <li>Operating System (Windows)</li>
-      </ul>
-      <img src="https://via.placeholder.com/800x250?text=Computer+Basics+with+Images" alt="Computer Course Image" class="course-img" />
-    </section>
-
-    <section id="typing">
-      <h2>Typing Practice</h2>
-      <p>Improve your typing speed here:</p>
-      <textarea rows="5" cols="80" placeholder="Start typing here..."></textarea>
-    </section>
-
-    <section id="test">
-      <h2>Computer Test</h2>
-      <form onsubmit="submitTest(); return false;">
-        <p>1. What does CPU stand for?</p>
-        <input type="radio" name="q1" /> a) Central Program Unit<br />
-        <input type="radio" name="q1" /> b) Central Processing Unit<br />
-        <input type="radio" name="q1" /> c) Computer Processing Unit<br /><br />
-
-        <p>2. Which key is used to create space in text?</p>
-        <input type="radio" name="q2" /> a) Enter<br />
-        <input type="radio" name="q2" /> b) Spacebar<br />
-        <input type="radio" name="q2" /> c) Shift<br /><br />
-
-        <button type="submit">Submit Test</button>
-      </form>
-    </section>
-
-    <section id="about">
-      <h2>About</h2>
-      <p>This platform is designed to teach computer knowledge to students using AI-based learning in a smart, interactive way.</p>
-    </section>
-
-    <section id="contact">
-      <h2>Contact Us</h2>
-      <p>Email: info@aipresident.com</p>
-    </section>
-  </main>
-
-  <footer>
-    &copy; 2025 AI President. All rights reserved.
-  </footer>
-
-  <button class="chatbot-button" onclick="toggleChatbot()">AI</button>
-  <div id="chatbot" class="chatbot-popup">
-    <iframe src="https://www.chatbase.co/chatbot-iframe/YOUR-BOT-ID-HERE"></iframe>
-  </div>
-</body>
-</html>
-
-<!DOCTYPE html>
-<html lang="hi">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="AI President - Complete Computer Course Learning Website for Students (Hindi + English)">
-  <title>AI President - Computer Learning</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: #f9f9f9;
-      color: #333;
-    }
-    header {
-      background: linear-gradient(135deg, #1e3c72, #2a5298);
-      padding: 2rem 1rem;
-      text-align: center;
-      color: white;
-    }
-    header h1 {
-      font-size: 3rem;
-      margin: 0;
-      text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
-    }
-    nav {
-      background: #222;
-      display: flex;
-      justify-content: center;
-      padding: 0.75rem;
-    }
-    nav a {
-      color: white;
-      margin: 0 1rem;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 2rem;
-      background: white;
-    }
-    .section {
-      margin-bottom: 2rem;
-    }
-    .section img {
-      width: 100%;
-      max-width: 500px;
-      border-radius: 8px;
-      margin: 1rem 0;
-    }
-    .section h2 {
-      color: #1e3c72;
-    }
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background: #eee;
-      margin-top: 2rem;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>AI President</h1>
-    <p>Complete Computer Course in Hindi + English</p>
-  </header>
-
-  <nav>
-    <a href="#intro">Introduction</a>
-    <a href="#parts">Computer Parts</a>
-    <a href="#software">Software</a>
-    <a href="#typing">Typing</a>
-    <a href="#test">Test</a>
-  </nav>
-
-  <div class="container">
-    <div class="section" id="intro">
-      <h2>1. Introduction to Computer (कंप्यूटर का परिचय)</h2>
-      <p>A computer is an electronic machine that processes raw data and converts it into meaningful information. It works with the help of hardware and software.</p>
-      <img src="https://via.placeholder.com/500x250?text=Computer+Introduction" alt="Computer Introduction">
-    </div>
-
-    <div class="section" id="parts">
-      <h2>2. Parts of Computer (कंप्यूटर के मुख्य भाग)</h2>
-      <ul>
-        <li><strong>Monitor:</strong> Displays output.</li>
-        <li><strong>CPU:</strong> Brain of the computer.</li>
-        <li><strong>Keyboard:</strong> Used to enter data.</li>
-        <li><strong>Mouse:</strong> Used to control the pointer.</li>
-      </ul>
-      <img src="https://via.placeholder.com/500x250?text=Computer+Parts" alt="Computer Parts">
-    </div>
-
-    <div class="section" id="software">
-      <h2>3. Software and Operating System (सॉफ्टवेयर और ऑपरेटिंग सिस्टम)</h2>
-      <p>Software is a set of instructions that directs the computer. Operating System (जैसे Windows, Linux) manages hardware and software.</p>
-      <img src="https://via.placeholder.com/500x250?text=Software+and+OS" alt="Software">
-    </div>
-
-    <div class="section" id="typing">
-      <h2>4. Typing Practice (टाइपिंग अभ्यास)</h2>
-      <p>Practice typing to improve speed and accuracy. Use ASDF JKL; keys as the home row keys.</p>
-      <img src="https://via.placeholder.com/500x250?text=Typing+Practice" alt="Typing">
-    </div>
-
-    <div class="section" id="test">
-      <h2>5. Online Test (ऑनलाइन टेस्ट)</h2>
-      <p>Take this quiz to check your computer knowledge.</p>
-      <p><em>(Online test link or embedded form can be added here)</em></p>
-    </div>
-  </div>
-
-  <footer>
-    © 2025 AI President. All rights reserved.
-  </footer>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="hi">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="AI President - Complete Computer Course Learning Website for Students (Hindi + English)">
-  <title>AI President - Computer Learning</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: #f9f9f9;
-      color: #333;
-    }
-    header {
-      background: linear-gradient(135deg, #1e3c72, #2a5298);
-      padding: 2rem 1rem;
-      text-align: center;
-      color: white;
-    }
-    header h1 {
-      font-size: 3rem;
-      margin: 0;
-      text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
-    }
-    nav {
-      background: #222;
-      display: flex;
-      justify-content: center;
-      padding: 0.75rem;
-    }
-    nav a {
-      color: white;
-      margin: 0 1rem;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 2rem;
-      background: white;
-    }
-    .section {
-      margin-bottom: 2rem;
-    }
-    .section img {
-      width: 100%;
-      max-width: 500px;
-      border-radius: 8px;
-      margin: 1rem 0;
-    }
-    .section h2 {
-      color: #1e3c72;
-    }
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background: #eee;
-      margin-top: 2rem;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>AI President</h1>
-    <p>Complete Computer Course in Hindi + English</p>
-  </header>
-
-  <nav>
-    <a href="#intro">Introduction</a>
-    <a href="#parts">Computer Parts</a>
-    <a href="#software">Software</a>
-    <a href="#typing">Typing</a>
-    <a href="#test">Test</a>
-  </nav>
-
-  <div class="container">
-    <div class="section" id="intro">
-      <h2>1. Introduction to Computer (कंप्यूटर का परिचय)</h2>
-      <p>A computer is an electronic machine that processes raw data and converts it into meaningful information. It works with the help of hardware and software.</p>
-      <img src="https://via.placeholder.com/500x250?text=Computer+Introduction" alt="Computer Introduction">
-    </div>
-
-    <div class="section" id="parts">
-      <h2>2. Parts of Computer (कंप्यूटर के मुख्य भाग)</h2>
-      <ul>
-        <li><strong>Monitor:</strong> Displays output.</li>
-        <li><strong>CPU:</strong> Brain of the computer.</li>
-        <li><strong>Keyboard:</strong> Used to enter data.</li>
-        <li><strong>Mouse:</strong> Used to control the pointer.</li>
-      </ul>
-      <img src="https://via.placeholder.com/500x250?text=Computer+Parts" alt="Computer Parts">
-    </div>
-
-    <div class="section" id="software">
-      <h2>3. Software and Operating System (सॉफ्टवेयर और ऑपरेटिंग सिस्टम)</h2>
-      <p>Software is a set of instructions that directs the computer. Operating System (जैसे Windows, Linux) manages hardware and software.</p>
-      <img src="https://via.placeholder.com/500x250?text=Software+and+OS" alt="Software">
-    </div>
-
-    <div class="section" id="typing">
-      <h2>4. Typing Practice (टाइपिंग अभ्यास)</h2>
-      <p>Practice typing to improve speed and accuracy. Use ASDF JKL; keys as the home row keys.</p>
-      <img src="https://via.placeholder.com/500x250?text=Typing+Practice" alt="Typing">
-    </div>
-
-    <div class="section" id="test">
-      <h2>5. Online Test (ऑनलाइन टेस्ट)</h2>
-      <p>Take this quiz to check your computer knowledge.</p>
-      <p><em>(Online test link or embedded form can be added here)</em></p>
-    </div>
-  </div>
-
-  <footer>
-    © 2025 AI President. All rights reserved.
-  </footer>
 </body>
 </html>
 
