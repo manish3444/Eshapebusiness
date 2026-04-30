@@ -1,197 +1,81 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="hi">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>ठंडी में मजा</title>
-  <style>
-    :root {
-      --bg1: #e0f7fa;
-      --bg2: #e8f5e9;
-      --card: #ffffff;
-      --accent: #0288d1;
-      --success: #2e7d32;
-      --danger: #c62828;
-      font-family: "Segoe UI", Roboto, "Noto Sans", Arial, sans-serif;
-    }
-    body{
-      margin:0;
-      min-height:100vh;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      background:linear-gradient(135deg,var(--bg1),var(--bg2));
-      color:#0b2540;
-    }
-    .wrap{
-      width:100%;
-      max-width:520px;
-      margin:24px;
-    }
-    .card{
-      background:var(--card);
-      border-radius:12px;
-      padding:22px;
-      box-shadow:0 10px 30px rgba(2,24,38,0.08);
-      text-align:center;
-    }
-    h1{
-      margin:0 0 6px 0;
-      font-size:28px;
-      color:var(--accent);
-    }
-    p.lead{
-      margin:0 0 18px 0;
-      color:#2f4f60;
-    }
-    label{
-      display:block;
-      text-align:left;
-      margin:12px 0 6px 0;
-      font-weight:600;
-    }
-    input[type="text"], .file-row{
-      width:100%;
-      box-sizing:border-box;
-      padding:10px 12px;
-      border-radius:8px;
-      border:1px solid #dfecec;
-      font-size:15px;
-    }
-    .file-row{
-      display:flex;
-      gap:10px;
-      align-items:center;
-    }
-    .file-row input[type="file"]{
-      flex:1;
-    }
-    .preview{
-      width:86px;
-      height:86px;
-      border-radius:8px;
-      border:1px dashed #cfeaea;
-      object-fit:cover;
-      background:#f7fdfd;
-    }
-    .btn{
-      display:inline-block;
-      margin-top:16px;
-      padding:10px 18px;
-      background:var(--accent);
-      color:white;
-      border:none;
-      border-radius:10px;
-      font-size:16px;
-      cursor:pointer;
-      transition:transform .08s ease;
-    }
-    .btn:active{ transform:translateY(1px); }
-    .msg{
-      margin-top:14px;
-      padding:12px;
-      border-radius:8px;
-      font-weight:600;
-    }
-    .msg.success{ background:#e8f5e9; color:var(--success); border:1px solid rgba(46,125,50,0.12); }
-    .msg.error{ background:#ffebee; color:var(--danger); border:1px solid rgba(198,40,40,0.12); }
-    .note{
-      margin-top:12px;
-      font-size:13px;
-      color:#40606a;
-    }
-    footer.small{
-      margin-top:16px;
-      font-size:12px;
-      color:#6b7f86;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manish Bytez - Learn Content Creation</title>
+    <style>
+        /* यह CSS आपकी वेबसाइट को सुंदर बनाएगा */
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; margin: 0; background-color: #f4f4f9; color: #333; }
+        header { background: #2c3e50; color: #fff; padding: 2rem; text-align: center; border-bottom: 5px solid #e74c3c; }
+        .container { width: 85%; margin: auto; overflow: hidden; padding: 20px; }
+        .card { background: #fff; padding: 20px; margin-bottom: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        h1 { margin: 0; font-size: 3rem; color: #f1c40f; }
+        h2 { color: #e74c3c; border-left: 5px solid #2c3e50; padding-left: 10px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+        th { background-color: #2c3e50; color: white; }
+        .platform-icon { font-size: 1.5rem; vertical-align: middle; }
+    </style>
 </head>
 <body>
-  <div class="wrap">
-    <div class="card">
-      <h1>ठंडी में मजा</h1>
-      <p class="lead">रज़ाई और कंबल को आधार के साथ मस्ती में "लिंक" करने का छोटा-पॉकेट डेमो।</p>
 
-      <label for="aadhaar">आधार नंबर (डमी/टेस्ट के लिए 12 अंकों का नंबर डालें)</label>
-      <input id="aadhaar" type="text" placeholder="उदा. 123412341234" inputmode="numeric" maxlength="12" />
+    <header>
+        <h1>Manish Bytez 🎓</h1>
+        <p>आपका स्वागत है! यहाँ आप सोशल मीडिया के मास्टर बनेंगे।</p>
+    </header>
 
-      <label style="margin-top:12px;">फोटो अपलोड करें</label>
-      <div class="file-row">
-        <input id="photo" type="file" accept="image/*" />
-        <img id="preview" class="preview" alt="प्रिव्यू" src="" />
-      </div>
+    <div class="container">
+        <!-- YouTube Section -->
+        <div class="card">
+            <h2>🎥 YouTube: A to Z गाइड</h2>
+            <h3>1. वीडियो बनाना (Production)</h3>
+            <p>हमेशा 1080p या 4K में शूट करें। शुरुआती 30 सेकंड में ऑडियंस को हुक (Hook) करना जरूरी है।</p>
+            <h3>2. SEO (Title, Tags, Description)</h3>
+            <ul>
+                <li><strong>Title:</strong> इसमें 'Main Keyword' जरूर डालें।</li>
+                <li><strong>Description:</strong> पहले 2 लाइन में वीडियो का सार लिखें और #Hashtags लगाएं।</li>
+                <li><strong>Tags:</strong> वीडियो से संबंधित 10-12 कीवर्ड्स डालें।</li>
+            </ul>
+        </div>
 
-      <button id="donateBtn" class="btn">दान करें</button>
+        <!-- Instagram & Facebook Section -->
+        <div class="card">
+            <h2>📱 Instagram & Facebook Strategy</h2>
+            <p>Reels और Shorts का उपयोग Reach बढ़ाने के लिए करें। Engagement के लिए Stories में Polls और Questions का उपयोग करें।</p>
+        </div>
 
-      <div id="message" aria-live="polite"></div>
-
-      <p class="note">नोट: अपनी रजाई और कम्बल को आधार कार्ड लिंक करें ताकि आपको ठंडी ना लगे।</p>
-      <footer class="small">फन-टेक © ठंडी में मजा</footer>
+        <!-- Best Time to Post Table -->
+        <div class="card">
+            <h2>🕰️ Best Time to Upload (सही समय)</h2>
+            <table>
+                <tr>
+                    <th>प्लेटफार्म</th>
+                    <th>सबसे अच्छा दिन</th>
+                    <th>सबसे अच्छा समय</th>
+                </tr>
+                <tr>
+                    <td>YouTube</td>
+                    <td>शुक्रवार - रविवार</td>
+                    <td>शाम 6:00 PM - 9:00 PM</td>
+                </tr>
+                <tr>
+                    <td>Instagram</td>
+                    <td>मंगलवार, बुधवार</td>
+                    <td>सुबह 11:00 AM - दोपहर 1:00 PM</td>
+                </tr>
+                <tr>
+                    <td>Facebook</td>
+                    <td>गुरुवार - रविवार</td>
+                    <td>दोपहर 1:00 PM - 3:00 PM</td>
+                </tr>
+            </table>
+        </div>
     </div>
-  </div>
 
-  <script>
-    const aadInput = document.getElementById('aadhaar');
-    const photoInput = document.getElementById('photo');
-    const preview = document.getElementById('preview');
-    const btn = document.getElementById('donateBtn');
-    const msg = document.getElementById('message');
+    <footer style="text-align: center; padding: 20px; background: #2c3e50; color: white;">
+        <p>&copy; 2026 Manish Bytez | साथ मिलकर सीखते हैं।</p>
+    </footer>
 
-    // फोटो प्रिव्यू
-    photoInput.addEventListener('change', () => {
-      const f = photoInput.files && photoInput.files[0];
-      if(!f){ preview.src = ''; return; }
-      if(!f.type.startsWith('image/')) {
-        preview.src = '';
-        showMessage('कृपया एक मान्य छवि फ़ाइल चुनें।', 'error');
-        return;
-      }
-      const reader = new FileReader();
-      reader.onload = e => preview.src = e.target.result;
-      reader.readAsDataURL(f);
-      clearMessage();
-    });
-
-    // उपयोगकर्ता की सुविधा के लिए केवल अंकों की अनुमति (UI मदद)
-    aadInput.addEventListener('input', () => {
-      // non-digits हटाएँ
-      aadInput.value = aadInput.value.replace(/\D/g,'').slice(0,12);
-    });
-
-    btn.addEventListener('click', () => {
-      clearMessage();
-      const aad = aadInput.value.trim();
-      const file = photoInput.files && photoInput.files[0];
-
-      if(!/^\d{12}$/.test(aad)){
-        showMessage('कृपया 12 अंकों का आधार नंबर डालें (यह जस्ट डेमो के लिए है)।', 'error');
-        return;
-      }
-      if(!file){
-        showMessage('कृपया पहले फोटो अपलोड करें।', 'error');
-        return;
-      }
-
-      // सुरक्षा नोट: हम पूरा आधार स्टोर/सबमिट नहीं कर रहे। केवल मज़ाक के लिए मास्क दिखाएँ।
-      const last4 = aad.slice(-4);
-      const masked = '**** **** **** ' + last4;
-
-      // दिखाएँ सफल मैसेज
-      showMessage('सफलतापूर्वक आपकी फोटो और आधार लिंक कर दिया गया।<br>' +
-                  'लिंक किया गया आधार: ' + masked + '<br>' +
-                  'अब आपकी रज़ाई और कंबल तैयार हैं — ठंडी में मज़ा!', 'success');
-
-      // यह एक मज़ाक/लोकल-डेमो है; असली डेटा सर्वर पर न भेजें।
-      // नीचे एक मज़ेदार एनिमेटेड प्रभाव:
-      btn.textContent = 'लिंक हो गया ✓';
-      setTimeout(() => btn.textContent = 'दान करें', 2200);
-    });
-
-    function showMessage(text, type){
-      msg.innerHTML = `<div class="msg ${type}">${text}</div>`;
-    }
-    function clearMessage(){ msg.innerHTML = ''; }
-  </script>
 </body>
 </html>
